@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+const path = location.pathname;
+
+const routes = {
+  "/home": "/index.html",
+  "/quisom": "/quisom.html",
+  "/contacte": "/contacte.html",
+  "/agenda": "/agenda.html",
+  "/events": "/events.html",
+  "/projectes": "/projectes.html",
+  "/publicacions": "/publicacions.html",
+  "/links": "/links.html",
+  "/mapa": "/mapa.html",
+  "/uneixte": "/uneixte.html",
+  "/credits": "/credits.html",
+  "/identitat": "/identitat.html",
+  "/auth": "/auth.html"
+};
+
+if (routes[path]) {
+    location.replace(routes[path]);
+}
+</script>
+</head>
+<body>
+<h1>404</h1>
+</body>
+</html>
