@@ -167,12 +167,12 @@
 
   function logoStrip() {
     return `
-      <img src="/images/logo2.jpg" alt="Logo 1" />
-      <img src="/images/logo3.png" alt="Logo 2" />
-      <img src="/images/logo4.png" alt="Logo 3" />
-      <img src="/images/logo5.png" alt="Logo 4" />
-      <img src="/images/logo6.png" alt="Logo 5" />
-      <img src="/images/logo7.png" alt="Logo 6" />
+      <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/logo2.jpg" alt="Logo 1" />
+      <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/logo3.png" alt="Logo 2" />
+      <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/logo4.png" alt="Logo 3" />
+      <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/logo5.png" alt="Logo 4" />
+      <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/logo6.png" alt="Logo 5" />
+      <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/logo7.png" alt="Logo 6" />
     `;
   }
 
@@ -182,7 +182,7 @@
       <ul class="nav-options desktop-only">
         <div class="search-container">
           <button type="button" class="search-toggle" data-action="open-search">
-            <img src="/images/search.png" alt="Buscar" />
+            <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/search.png" alt="Buscar" />
           </button>
         </div>
 
