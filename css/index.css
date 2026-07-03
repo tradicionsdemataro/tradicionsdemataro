@@ -16,20 +16,20 @@
 
 .yellow-container {
   background-color: #F2D57E;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   width: 580px !important;
-  height: 70px;
+  height: 48px;
   box-sizing: border-box;
 }
 
 .navbar {
   background-color: #1F1E40;
-  padding: 12px;
+  padding: 6px 14px;
   flex-grow: 1;
-  height: 95px;
+  height: 64px;
   width: 100%;
   border-radius: 0;
   display: flex;
@@ -40,7 +40,7 @@
 .nav-options {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 22px;
   justify-content: flex-start;
   margin: 0;
   padding-left: 5px;
@@ -49,16 +49,16 @@
 .nav-options li a, .dropbtn {
   color: white;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   text-decoration: none;
   background: none;
   border: none;
   cursor: pointer;
-  height: 38px;
-  line-height: 38px;
+  height: 30px;
+  line-height: 30px;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 8px;
   white-space: nowrap;
 }
 
@@ -66,7 +66,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 38px;
+  top: 30px;
   left: 0;
   background-color: #1F1E40;
   min-width: 190px;
@@ -97,7 +97,12 @@
 @media (max-width: 850px) {
   .yellow-container { display: none; }
   .nav-options { display: none; }
-  .menu-toggle { display: block; background: none; border: none; font-size: 2rem; color: white; cursor: pointer; }
+  .menu-toggle { display: block; background: none; border: none; font-size: 1.6rem; color: white; cursor: pointer; }
+
+  .navbar {
+    height: 56px;
+    padding: 6px 12px;
+  }
 
   .close-menu {
     position: absolute;
@@ -106,7 +111,7 @@
     background: none;
     border: none;
     color: white;
-    font-size: 2rem;
+    font-size: 1.6rem;
     cursor: pointer;
   }
 
@@ -266,14 +271,14 @@
   border: none;
   color: white;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   cursor: pointer;
 
-  height: 38px;
-  line-height: 38px;
+  height: 30px;
+  line-height: 30px;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 8px;
   white-space: nowrap;
 
   position: relative;
@@ -400,14 +405,14 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin-right: 10px;
+  margin-right: 8px;
   transition: transform 0.3s ease;
 }
 
 .search-toggle img {
-  margin-top: -12px !important;
-  width: 54px;
-  height: 54px;
+  margin-top: -6px !important;
+  width: 34px;
+  height: 34px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -428,21 +433,21 @@
 
 .yellow-container {
   background-color: #F2D57E;
-  padding: 10px;
+  padding: 6px 10px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
   width: 70%;
-  height: 95px;
+  height: 64px;
   flex-wrap: nowrap;
   box-sizing: border-box;
 }
 
 .yellow-container img {
-  height: 50px;
-  padding: 4px;
+  height: 32px;
+  padding: 2px;
   width: auto;
   object-fit: contain;
 }
@@ -505,20 +510,20 @@
   }
 
   .yellow-container {
-    width: 380px;
-    height: 95px;
-    padding: 10px;
-    gap: 12px;
+    width: 300px;
+    height: 60px;
+    padding: 6px;
+    gap: 8px;
   }
 
   .yellow-container img {
-    height: 64px;
-    padding: 3px;
+    height: 28px;
+    padding: 2px;
   }
 
   .navbar {
-    padding: 6px 16px;
-    height: 70px;
+    padding: 4px 14px;
+    height: 56px;
     width: 100% !important;
     max-width: 100%;
     display: flex;
@@ -528,16 +533,16 @@
   }
 
   .nav-options {
-    margin-left: -90px;
-    gap: 25px;
+    margin-left: -70px;
+    gap: 18px;
   }
 
   .nav-options li a,
   .dropbtn {
-    font-size: 1.1rem;
-    height: 34px;
-    line-height: 34px;
-    padding: 0 8px;
+    font-size: 0.9rem;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 6px;
   }
 
   .dropdown-content {
@@ -556,9 +561,9 @@
   }
 
   .search-toggle img {
-    width: 48px;
-    height: 48px;
-    margin-top: -10px !important;
+    width: 30px;
+    height: 30px;
+    margin-top: -6px !important;
   }
 
   .search-form.expanded {
@@ -607,7 +612,7 @@
     position: absolute;
     top: -40px;
     right: 20px;
-    font-size: 2rem;
+    font-size: 1.6rem;
     cursor: pointer;
     z-index: 101;
     color: white;
@@ -677,8 +682,8 @@
 }
 
 .navbar-avatar {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffd500;
