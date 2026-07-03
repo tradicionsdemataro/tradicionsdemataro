@@ -71,7 +71,7 @@ function renderSearchContent(container, onCloseCallback) {
             </svg>
           </button>
         </div>
-       
+
         <button class="mobile-filter-toggle" data-action="toggle-filters" aria-expanded="false" aria-label="Filtres">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="4" y1="6" x2="20" y2="6"></line>
@@ -81,6 +81,12 @@ function renderSearchContent(container, onCloseCallback) {
           <span class="filter-badge" style="display:none;"></span>
         </button>
 
+        <button
+          class="mobile-search-close"
+          data-action="close-search-content"
+          aria-label="Tancar cerca"
+          style="position:relative; z-index:9999; width:34px; height:34px; display:flex; align-items:center; justify-content:center; border:none; border-radius:50%; background:rgba(20,20,20,0.85); color:#fff; font-size:16px; line-height:1; cursor:pointer; margin-left:8px; flex-shrink:0;"
+        >✕</button>
       </div>
 
       <aside class="filters-sidebar">

@@ -23,15 +23,13 @@
       <div class="search-overlay ${isOpen && !isClosing ? "activo" : ""} ${isClosing ? "cerrando" : ""}">
         <div class="navbar-clone"></div>
         <div class="overlay-backdrop" data-action="close-overlay"></div>
-        <button
-            class="overlay-close"
-            data-action="close-overlay"
-            aria-label="Tancar cerca">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <line x1="2" y1="2" x2="14" y2="14"></line>
-                <line x1="14" y1="2" x2="2" y2="14"></line>
-            </svg>
-            </button>
+
+        <button class="overlay-close" aria-label="Tancar cerca" data-action="close-overlay">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="2" y1="2" x2="14" y2="14"></line>
+            <line x1="14" y1="2" x2="2" y2="14"></line>
+          </svg>
+        </button>
 
         <div class="search-content-mount"></div>
       </div>
