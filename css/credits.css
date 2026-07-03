@@ -1,0 +1,146 @@
+.credits-page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HERO */
+
+.credits-hero {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 8vw;
+  overflow: hidden;
+}
+
+.credits-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.credits-title {
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: .9;
+  letter-spacing: -4px;
+  margin: 20px 0;
+}
+
+.accent-word {
+  color: var(--yellow);
+}
+
+.credits-subtitle {
+  max-width: 650px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.credits-bg {
+  position: absolute;
+  right: -40px;
+  bottom: -20px;
+  font-size: clamp(7rem, 18vw, 20rem);
+  font-weight: 900;
+  opacity: .03;
+  color: white;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* CONTENT */
+
+.credits-content {
+  max-width: 1400px;
+  margin: auto;
+  padding: 80px 8vw 120px;
+  display: grid;
+  gap: 30px;
+}
+
+.credits-card {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  border: 1px solid var(--line);
+  transition: all .35s ease;
+}
+
+.credits-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--yellow);
+}
+
+.credits-label {
+  display: inline-block;
+  margin-bottom: 12px;
+
+  color: var(--yellow);
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.credits-card h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.credits-card p {
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.credits-info p {
+  margin-bottom: 14px;
+}
+
+.credits-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 10px;
+
+  color: var(--yellow);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.credits-link:hover {
+  opacity: .8;
+}
+
+blockquote {
+  margin: 24px 0;
+  padding-left: 20px;
+
+  border-left: 3px solid var(--yellow);
+
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .credits-hero {
+    min-height: 55vh;
+    padding: 100px 24px;
+  }
+
+  .credits-content {
+    padding: 50px 24px 80px;
+  }
+
+  .credits-card {
+    padding: 28px;
+  }
+}

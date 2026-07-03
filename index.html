@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tradicions de Mataró</title>
+
+  <!-- Tabler Icons (utilitzat arreu com a <i class="ti ti-..."></i>) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Mateixos fulls d'estil que feia servir el component React -->
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/home-publi.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+  <div class="home-container">
+
+    <!-- ===== NAVBAR ===== -->
+    <!-- omplert dinàmicament per js/navbar.js -->
+    <header id="navbar"></header>
+
+    <!-- ===== COOKIES ===== -->
+    <!-- Substitueix aquest bloc pel markup real del teu component Cookies -->
+    <div id="cookies-banner"></div>
+
+    <!-- ===== OVERLAY DE CERCA ===== -->
+    <!-- omplert dinàmicament per js/overlay.js quan es clica la lupa -->
+    <div id="search-overlay-root"></div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-section" style="width:100%; height:90vh; position:relative; overflow:hidden;">
+      <div class="clock-section">
+        <button class="clock-close-inline" aria-label="Tancar rellotge">✕</button>
+        <div class="clock-time"></div>
+        <div class="clock-date"></div>
+      </div>
+
+      <div class="video-hero" style="width:100%; height:100%; position:relative;">
+        <div class="video-overlay" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.25) 45%, rgba(10,10,10,0.95) 100%); z-index:2;"></div>
+        <video class="video-iframe" src="images/video-home.mp4" autoplay muted loop playsinline
+          style="width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; z-index:1; filter:grayscale(0.35);"></video>
+        <div class="hero-text-wrapper">
+          <span class="hero-index">EST. 2015</span>
+          <h1 class="hero-title">TRADICIONS<br />DE MATARÓ</h1>
+          <p class="hero-subtitle">Teixint tradicions, creant futur.</p>
+          <button class="hero-arrow-img" aria-label="Obrir rellotge">
+            <span class="hero-arrow-line"></span>
+            <span class="hero-arrow-label">SCROLL</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUI SOM ===== -->
+    <section class="qui-som-monumental">
+      <div class="monumental-header">
+        <span class="section-index">01 / L'ESSÈNCIA</span>
+        <h2 class="monumental-title">
+          10 ANYS TEIXINT LA<br />
+          <span class="accent-word">MEMÒRIA</span> DE MATARÓ
+        </h2>
+      </div>
+      <div class="monumental-grid">
+        <div class="monumental-box span-2">
+          <span class="monumental-tag tag-blue"><i class="ti ti-quote"></i> La nostra veu</span>
+          <p class="large-intro">
+            <span class="accent-quote">"Tradicions de Mataró"</span> no és només un arxiu; és un organisme viu que respira al ritme de la ciutat. Des de 2015, hem documentat cada fil que ens uneix, transformant la tradició en un llenguatge audiovisual contemporani que mira cap al futur.
+          </p>
+        </div>
+        <div class="monumental-box">
+          <span class="monumental-tag tag-yellow"><i class="ti ti-target"></i> Propòsit</span>
+          <h3>El nostre propòsit</h3>
+          <p>Preservar la identitat mataronina. No ens limitem a gravar; capturem l'essència, el sentiment i l'herència que ens defineix com a comunitat.</p>
+        </div>
+        <div class="monumental-box">
+          <span class="monumental-tag tag-pink"><i class="ti ti-eye"></i> Mirada</span>
+          <h3>La nostra mirada</h3>
+          <p>El nostre equip aposta per un estil documental honest. Creiem que la cultura popular ha de ser accessible, moderna i, sobretot, compartida per totes les generacions.</p>
+        </div>
+        <div class="monumental-box span-2-wide">
+          <div class="big-stat"><span class="number">2015</span><span class="label">L'inici d'un somni</span></div>
+          <div class="big-stat"><span class="number">150+</span><span class="label">Reportatges produïts</span></div>
+          <div class="big-stat"><span class="number">100%</span><span class="label">Passió per Mataró</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="timeline-section" style="background-image:url(images/timeline-bg.jpg);">
+      <div class="timeline-overlay"></div>
+      <div class="timeline-header">
+        <span class="section-index light">02 / CRONOLOGIA</span>
+        <h2 class="timeline-section-title">Una dècada en moviment</h2>
+      </div>
+      <div class="timeline-wrapper">
+        <div class="timeline-left">
+          <div class="timeline-line"></div>
+          <div class="timeline-years"><!-- generat per app.js --></div>
+        </div>
+        <div class="timeline-right"><!-- generat per app.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== GALERIA ===== -->
+    <section class="gallery-section">
+      <div class="gallery-header">
+        <div class="gallery-header-text">
+          <span class="section-index">03 / ARXIU VISUAL</span>
+          <h2>Fragments de <span class="accent-word">memòria</span></h2>
+          <p>Una selecció visual de moments que defineixen la nostra identitat: festes, carrers, gent i tradicions vives de Mataró.</p>
+        </div>
+        <span class="gallery-counter"><strong></strong> / IMATGES DESTACADES</span>
+      </div>
+
+      <div class="gallery-grid"><!-- generat per app.js --></div>
+      <div class="gallery-strip"><!-- generat per app.js --></div>
+
+      <div class="gallery-cta">
+        <span class="gallery-cta-line"></span>
+        <a href="/galeria" class="gallery-cta-link">Veure arxiu complet <i class="ti ti-arrow-right"></i></a>
+        <span class="gallery-cta-line"></span>
+      </div>
+    </section>
+
+    <!-- ===== VIDEOS ===== -->
+    <section class="videos-section">
+      <div class="videos-header">
+        <div>
+          <span class="section-index">04 / AUDIOVISUAL</span>
+          <h2 class="videos-title">La <span class="accent-word">cultura</span> en moviment</h2>
+          <p class="videos-sub">Documentals, cobertures en directe i reportatges en vídeo sobre les tradicions de Mataró.</p>
+        </div>
+        <a href="/videos" class="videos-link-all">Veure tots els vídeos <i class="ti ti-arrow-right"></i></a>
+      </div>
+
+      <div class="videos-grid"><!-- generat per app.js: featured + sidebar --></div>
+
+      <div class="videos-reels-header">
+        <span class="section-index" style="margin-bottom:0;">MOMENTS CURTS</span>
+        <div class="videos-reels-line"></div>
+      </div>
+      <div class="videos-reels"><!-- generat per app.js --></div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats-section">
+      <div class="stats-header">
+        <div>
+          <span class="section-index light">05 / NÚMEROS</span>
+          <h2 class="stats-title">Una dècada <span class="accent-word">en xifres</span></h2>
+        </div>
+        <p class="stats-sub">Deu anys de feina constant es tradueixen en història documentada, comunitat activa i molts moments compartits.</p>
+      </div>
+      <div class="stats-grid"><!-- generat per app.js --></div>
+    </section>
+
+    <!-- ===== MAP CTA ===== -->
+    <section class="map-cta-section">
+      <div class="map-cta-content">
+        <span class="section-index light">06 / MAPA</span>
+        <h2>Explora les <span class="accent-word">trobades</span><br />en el territori</h2>
+        <p>Descobreix on han passat tots els moments clau del projecte. Navega per anys, llocs i històries d'una dècada de Mataró.</p>
+        <div class="map-cta-tags">
+          <span class="map-cta-tag">Festes Majors</span>
+          <span class="map-cta-tag">Mostra de Gegants</span>
+          <span class="map-cta-tag">Sant Jordi</span>
+          <span class="map-cta-tag">+40 trobades</span>
+        </div>
+        <div class="map-cta-buttons">
+          <a href="/mapa-trobans" class="map-btn primary">Obrir mapa interactiu</a>
+          <a href="/trobans" class="map-btn secondary">Veure totes les trobades</a>
+        </div>
+      </div>
+      <div class="map-visual">
+        <img src="images/mapa.png" alt="Mapa Trobans" />
+        <span class="map-visual-pin p1"></span>
+        <span class="map-visual-pin p2"></span>
+        <span class="map-visual-pin p3"></span>
+      </div>
+    </section>
+
+    <!-- ===== PUBLICACIONS — feed vertical estil insta ===== -->
+    <section class="hpf-section">
+
+      <div class="hpf-header">
+        <div class="hpf-header-left">
+          <span class="section-index">07 / PUBLICACIONS</span>
+          <h2 class="hpf-title">Ultimes <span class="hpf-accent">publicacions</span></h2>
+          <p class="hpf-subtitle">Tot el que hem compartit: reportatges, events i moment de la cultura local.</p>
+        </div>
+
+        <div class="hpf-profile-pill">
+          <div class="hpf-avatar-ring">
+            <div class="hpf-avatar-inner"><img src="images/logo1.png" alt="TM" /></div>
+          </div>
+          <div class="hpf-profile-info">
+            <span class="hpf-profile-name">Tradicions Mataró</span>
+            <span class="hpf-profile-handle">@tradicionsmataro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estats (loading / error / buit) — app.js en canvia el display -->
+      <div class="hpf-state hpf-loading-block">
+        <div class="hpf-spinner"></div>
+        <span>Carregant publicacions…</span>
+      </div>
+
+      <div class="hpf-state hpf-err hpf-error-block" style="display:none;">
+        <i class="ti ti-alert-circle" style="font-size:1.6rem;"></i>
+        <span class="hpf-error-msg">Error</span>
+      </div>
+
+      <div class="hpf-state hpf-empty-block" style="display:none;">
+        <i class="ti ti-photo-off" style="font-size:1.6rem;"></i>
+        <span>Encara no hi han publicacions.</span>
+      </div>
+
+      <!-- Feed -->
+      <div class="hpf-feed" style="display:none;"><!-- generat per app.js --></div>
+
+      <!-- Footer -->
+      <div class="hpf-footer" style="display:none;">
+        <div class="hpf-load-wrap">
+          <span class="hpf-count-label"></span>
+          <!-- botó "Carregar més" / "Veure totes" generat per app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA COMUNITAT ===== -->
+    <section class="cta-section">
+      <span class="cta-bg-text">UNEIX-TE</span>
+      <div class="cta-content">
+        <div>
+          <span class="section-index light">08 / COMUNITAT</span>
+          <h2>
+            Vols formar part de<br />
+            <span class="accent-word">Tradicions de Mataró</span>?
+          </h2>
+          <p>Uneix-te a la nostra comunitat, col·labora amb nosaltres o simplement segueix les nostres aventures culturals.</p>
+          <div class="cta-buttons">
+            <a href="/unirte" class="cta-btn primary">Uneix-te al projecte</a>
+            <a href="/contactar" class="cta-btn secondary">Contacta'ns</a>
+          </div>
+        </div>
+        <div class="cta-side-card">
+          <div class="cta-side-card-row">
+            <span class="cta-side-card-label">Seguidors</span>
+            <span class="cta-side-card-value">120+</span>
+          </div>
+          <div class="cta-side-card-row">
+            <span class="cta-side-card-label">Col·laboradors</span>
+            <span class="cta-side-card-value">25</span>
+          </div>
+          <div class="cta-side-card-row">
+            <span class="cta-side-card-label">Pròxima trobada</span>
+            <span class="cta-side-card-value">Setembre</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <!-- Substitueix aquest bloc pel markup real del teu component Footer -->
+    <footer id="footer"></footer>
+
+  </div>
+
+  <!-- Scripts: primer les dades, després la lògica -->
+  <script src="js/Data.js"></script>
+  <script src="js/search-data.js"></script>
+  <script src="js/search-content.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/Home.js"></script>
+  <script src="js/footer.js"></script>
+
+</body>
+</html>

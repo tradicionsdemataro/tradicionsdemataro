@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projectes · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/projectes.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <main class="projectes-page">
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <section class="projectes-hero">
+      <div class="projectes-hero-inner">
+        <span class="section-index light">PROJECTES</span>
+        <h1 class="projectes-title">
+          El que<br />
+          <span class="accent-word">fem</span>.
+        </h1>
+        <p class="projectes-subtitle">
+          Iniciatives culturals per preservar i divulgar les tradicions de Mataró.
+        </p>
+      </div>
+
+      <!-- mostrat per js/projectes.js quan loading acaba -->
+      <div class="projectes-hero-stats" id="projectes-hero-stats" style="display:none;">
+        <div class="projectes-hero-stat">
+          <span class="projectes-hero-stat-num" style="color: var(--yellow)" id="stat-total">0</span>
+          <span class="projectes-hero-stat-label">Projectes totals</span>
+        </div>
+        <div class="projectes-hero-stat">
+          <span class="projectes-hero-stat-num" style="color: var(--blue)" id="stat-actius">0</span>
+          <span class="projectes-hero-stat-label">Actius ara</span>
+        </div>
+        <div class="projectes-hero-stat">
+          <span class="projectes-hero-stat-num" style="color: var(--pink)" id="stat-categories">0</span>
+          <span class="projectes-hero-stat-label">Categories</span>
+        </div>
+      </div>
+
+      <span class="projectes-bg">PROJECTES</span>
+    </section>
+
+    <!-- ── FILTRES ───────────────────────────────────────── -->
+    <section class="projectes-filters">
+
+      <!-- Cerca -->
+      <div class="pf-search-box">
+        <i class="ti ti-search pf-search-icon"></i>
+        <input type="text" id="pf-search-input" placeholder="Cerca projectes..." />
+        <button class="pf-search-clear" id="pf-search-clear" style="display:none;">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+
+      <!-- generat per js/projectes.js -->
+      <div class="projecte-cat-pills" id="projecte-cat-pills"></div>
+
+      <!-- Estat select + reset -->
+      <div class="pf-right">
+        <div class="pf-select-wrap">
+          <i class="ti ti-filter"></i>
+          <select id="pf-estat-select">
+            <option value="tots">Tots els estats</option>
+            <option value="actiu">Actiu</option>
+            <option value="finalitzat">Finalitzat</option>
+            <option value="pendent">Pendent</option>
+          </select>
+        </div>
+
+        <button class="pf-reset-btn" id="pf-reset-btn" style="display:none;">
+          <i class="ti ti-x"></i> Netejar
+        </button>
+
+        <span class="pf-count">
+          <strong id="pf-count-filtered">0</strong> / <span id="pf-count-total">0</span>
+        </span>
+      </div>
+
+    </section>
+
+    <!-- ── GRID: generat per js/projectes.js ── -->
+    <section class="projectes-grid-section" id="projectes-grid-section"></section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/projectes-data.js"></script>
+  <script src="js/projectes.js"></script>
+</body>
+</html>

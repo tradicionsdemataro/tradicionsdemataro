@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/mapa.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <div class="mapa-page">
+
+    <!-- ─── HERO ─────────────────────────────────────────────────────── -->
+    <div class="mapa-hero">
+      <div class="mapa-hero-inner">
+        <span class="section-index light">MAPA INTERACTIU</span>
+        <h1 class="mapa-title">
+          Explora els <span class="accent-word">esdeveniments</span>
+        </h1>
+        <p class="mapa-subtitle" id="mapa-subtitle">Carregant...</p>
+      </div>
+
+      <!-- generat per js/mapa.js -->
+      <div class="mapa-hero-stats" id="mapa-hero-stats"></div>
+
+      <span class="mapa-hero-bg">MAPA</span>
+    </div>
+
+    <!-- ─── TOOLBAR ──────────────────────────────────────────────────── -->
+    <div class="mapa-toolbar">
+      <div class="mapa-toolbar-left">
+        <button class="mapa-tool-btn" id="mapa-sidebar-toggle" title="Sidebar">
+          <i class="ti ti-layout-sidebar"></i>
+        </button>
+
+        <div class="mapa-sort-select">
+          <i class="ti ti-arrows-sort"></i>
+          <select id="mapa-sort-select-input"></select>
+        </div>
+
+        <input
+          type="date"
+          class="mapa-date-filter"
+          id="mapa-date-filter"
+          title="Filtra per data"
+        />
+
+        <button class="mapa-reset-btn" id="mapa-reset-btn" style="display:none;">
+          <i class="ti ti-x"></i> Netejar filtres
+        </button>
+      </div>
+
+      <div class="mapa-toolbar-right">
+        <!-- View mode: generat per js/mapa.js -->
+        <div class="mapa-view-btns" id="mapa-view-btns"></div>
+
+        <!-- Map style: generat per js/mapa.js -->
+        <div class="mapa-style-btns" id="mapa-style-btns"></div>
+
+        <!-- Radius toggle -->
+        <button class="mapa-tool-btn" id="mapa-radius-toggle" title="Radi de cerca">
+          <i class="ti ti-circle-dotted"></i>
+        </button>
+
+        <div class="mapa-radius-control" id="mapa-radius-control" style="display:none;">
+          <span id="mapa-radius-label">500m</span>
+          <input type="range" id="mapa-radius-range" min="100" max="2000" step="100" value="500" />
+        </div>
+
+        <button class="mapa-tool-btn" id="mapa-locate-btn" title="La meva ubicació">
+          <i class="ti ti-current-location"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ─── LAYOUT ───────────────────────────────────────────────────── -->
+    <div class="mapa-layout" id="mapa-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="mapa-sidebar" id="mapa-sidebar">
+
+        <div class="mapa-search-box">
+          <i class="ti ti-search mapa-search-icon"></i>
+          <input type="text" id="mapa-search-input" placeholder="Cerca un esdeveniment..." />
+          <button class="mapa-search-clear" id="mapa-search-clear">
+            <i class="ti ti-x"></i>
+          </button>
+        </div>
+
+        <!-- CATEGORY FILTER -->
+        <div class="mapa-cat-filter">
+          <button class="mapa-cat-btn active" id="mapa-cat-tots">
+            <span class="mapa-cat-icon-wrap">
+              <i class="ti ti-grid-dots"></i>
+            </span>
+            <span>Tots</span>
+          </button>
+
+          <!-- generat per js/mapa.js -->
+          <div id="mapa-cat-list" style="display:contents;"></div>
+        </div>
+
+        <div class="mapa-count">
+          <span id="mapa-count-filtered">0</span> / <span id="mapa-count-total">0</span> resultats
+        </div>
+
+        <!-- EVENT LIST: generat per js/mapa.js -->
+        <div class="mapa-event-list view-list" id="mapa-event-list"></div>
+      </aside>
+
+      <!-- MAP -->
+      <div class="mapa-container">
+        <div id="leaflet-map" class="leaflet-map"></div>
+
+        <!-- Zoom controls -->
+        <div class="mapa-zoom-controls">
+          <button class="mapa-zoom-btn" id="mapa-zoom-in">+</button>
+          <button class="mapa-zoom-btn" id="mapa-zoom-out">−</button>
+          <button class="mapa-zoom-btn mapa-home-btn" id="mapa-home-btn" title="Centrar">
+            <i class="ti ti-home"></i>
+          </button>
+        </div>
+
+        <!-- Count badge -->
+        <div class="mapa-badge">
+          <span id="mapa-badge-count">0</span> events visibles
+        </div>
+
+        <!-- Selected event panel -->
+        <div class="mapa-selected-panel" id="mapa-selected-panel" style="display:none;">
+          <div class="mapa-selected-cat">
+            <img src="" alt="" />
+          </div>
+          <div class="mapa-selected-info">
+            <p class="mapa-selected-ambit"></p>
+            <p class="mapa-selected-title"></p>
+            <p class="mapa-selected-date"></p>
+          </div>
+          <button class="mapa-selected-close" id="mapa-selected-close">
+            <i class="ti ti-x"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/mapa-data.js"></script>
+  <script src="js/mapa.js"></script>
+</body>
+</html>

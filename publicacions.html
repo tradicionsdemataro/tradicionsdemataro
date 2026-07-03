@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publicacions · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/publicacions.css" />
+  <link rel="stylesheet" href="css/comentaris.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <main class="publicacions-page">
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <section class="publicacions-hero">
+      <div class="publicacions-hero-inner">
+        <span class="section-index light">PUBLICACIONS</span>
+        <h1 class="publicacions-title">
+          El que<br />
+          <span class="accent-word">expliquem</span>.
+        </h1>
+        <p class="publicacions-subtitle">
+          Articles, cròniques i reportatges sobre la cultura i les tradicions de Mataró.
+        </p>
+      </div>
+
+      <!-- generat/mostrat per js/publicacions.js -->
+      <div class="publicacions-hero-stats" id="publicacions-hero-stats" style="display:none;">
+        <div class="publicacions-hero-stat">
+          <span class="publicacions-hero-stat-num" style="color: var(--yellow)" id="stat-total">0</span>
+          <span class="publicacions-hero-stat-label">Publicacions totals</span>
+        </div>
+        <div class="publicacions-hero-stat">
+          <span class="publicacions-hero-stat-num" style="color: var(--blue)" id="stat-publicades">0</span>
+          <span class="publicacions-hero-stat-label">Publicades</span>
+        </div>
+        <div class="publicacions-hero-stat">
+          <span class="publicacions-hero-stat-num" style="color: var(--pink)" id="stat-categories">0</span>
+          <span class="publicacions-hero-stat-label">Categories</span>
+        </div>
+      </div>
+
+      <span class="publicacions-bg">PUBLI</span>
+    </section>
+
+    <!-- ── FILTRES ───────────────────────────────────────── -->
+    <section class="publicacions-filters">
+
+      <div class="pf-search-box">
+        <i class="ti ti-search pf-search-icon"></i>
+        <input type="text" id="pf-search-input" placeholder="Cerca publicacions..." />
+        <button class="pf-search-clear" id="pf-search-clear" style="display:none;">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+
+      <!-- generat per js/publicacions.js -->
+      <div class="pf-cat-pills" id="pf-cat-pills"></div>
+
+      <div class="pf-right">
+        <div class="pf-select-wrap">
+          <i class="ti ti-filter"></i>
+          <select id="pf-estat-select">
+            <option value="tots">Tots els estats</option>
+            <option value="publicat">Publicat</option>
+            <option value="esborrany">Esborrany</option>
+            <option value="arxivat">Arxivat</option>
+          </select>
+        </div>
+
+        <button class="pf-reset-btn" id="pf-reset-btn" style="display:none;">
+          <i class="ti ti-x"></i> Netejar
+        </button>
+
+        <span class="pf-count">
+          <strong id="pf-count-filtered">0</strong> / <span id="pf-count-total">0</span>
+        </span>
+      </div>
+
+    </section>
+
+    <!-- ── GRID: generat per js/publicacions.js ── -->
+    <section class="publicacions-grid-section" id="publicacions-grid-section"></section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/publicacions-data.js"></script>
+  <script src="js/ressenyes.js"></script>
+  <script src="js/publicacions.js"></script>
+</body>
+</html>

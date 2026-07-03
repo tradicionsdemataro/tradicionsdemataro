@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publicació · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/overlay.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/comentaris.css" />
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="css/publicacioDetall.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <!-- ===== LOADING ===== -->
+  <div class="pubd-fullstate" id="pubd-loading">
+    <div class="pubd-spinner"></div>
+    <span>Carregant publicació…</span>
+  </div>
+
+  <!-- ===== ERROR ===== -->
+  <div class="pubd-fullstate pubd-fullstate--err" id="pubd-error" style="display:none;">
+    <i class="ti ti-alert-circle"></i>
+    <span id="pubd-error-msg">Publicació no trobada</span>
+    <button class="pubd-back-btn" id="pubd-error-back">
+      <i class="ti ti-arrow-left"></i> Tornar a publicacions
+    </button>
+  </div>
+
+  <!-- ===== CONTINGUT PRINCIPAL ===== -->
+  <main class="pubd-page" id="pubd-main" style="display:none;">
+
+    <!-- BREADCRUMB: generat per js/publicacio.js -->
+    <div class="pubd-breadcrumb" id="pubd-breadcrumb"></div>
+
+    <!-- HERO: generat per js/publicacio.js -->
+    <section class="pubd-hero" id="pubd-hero"></section>
+
+    <!-- BODY: article + sidebar -->
+    <div class="pubd-body">
+      <!-- generat per js/publicacio.js -->
+      <article class="pubd-article" id="pubd-article"></article>
+
+      <!-- generat per js/publicacio.js -->
+      <aside class="pubd-sidebar" id="pubd-sidebar"></aside>
+    </div>
+
+    <!-- RESSENYES -->
+    <section class="pubd-res-section">
+      <!-- generat per js/publicacio.js -->
+      <div class="pubd-res-inner" id="pubd-res-inner"></div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX: generat per js/publicacio.js -->
+  <div id="pubd-lightbox-root"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/publicacio-data.js"></script>
+  <script src="js/resenyes.js"></script>
+  <script src="js/publicacio.js"></script>
+</body>
+</html>

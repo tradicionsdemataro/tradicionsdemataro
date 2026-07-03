@@ -1,0 +1,347 @@
+.identitat-page{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(242,213,126,0.08), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(242,99,126,0.08), transparent 45%),
+    #0a0a0a;
+
+  color:white;
+  font-family: system-ui, sans-serif;
+  overflow-x:hidden;
+}
+
+/* =========================
+   HERO (más editorial)
+========================= */
+.identitat-hero{
+  padding:120px 80px 80px;
+  position:relative;
+}
+
+.identitat-title{
+  font-size:72px;
+  font-weight:900;
+  letter-spacing:-3px;
+  line-height:1;
+}
+
+.accent-word{
+  color:#F2D57E;
+  text-shadow:0 10px 40px rgba(242,213,126,0.25);
+}
+
+.identitat-subtitle{
+  max-width:620px;
+  margin-top:18px;
+  opacity:.75;
+  line-height:1.6;
+}
+
+.identitat-bg{
+  position:absolute;
+  right:60px;
+  bottom:0;
+  font-size:180px;
+  font-weight:900;
+  opacity:.04;
+  letter-spacing:10px;
+}
+
+/* =========================
+   SECTIONS (aire real)
+========================= */
+.identitat-section{
+  padding:80px 80px;
+}
+
+/* heading elegante */
+.section-heading{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-bottom:40px;
+}
+
+.section-line{
+  width:80px;
+  height:1px;
+  background:linear-gradient(90deg,#F2D57E,transparent);
+}
+
+/* =========================
+   INTRO CARD (glass brutal)
+========================= */
+.identitat-card{
+  max-width:900px;
+  padding:42px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 40px 120px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.identitat-label{
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:#F2D57E;
+  opacity:.9;
+}
+
+.identitat-card h2{
+  margin-top:14px;
+  font-size:28px;
+  letter-spacing:-0.5px;
+}
+
+.identitat-card p{
+  margin-top:10px;
+  opacity:.75;
+  line-height:1.7;
+}
+
+.identitat-card blockquote{
+  margin-top:20px;
+  padding-left:16px;
+  border-left:2px solid #F2D57E;
+  opacity:.85;
+  font-style:italic;
+}
+
+/* =========================
+   LOGOS GRID (MUY COOL)
+========================= */
+.logos-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+/* card premium */
+.logo-card{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition: all .4s ease;
+}
+
+.logo-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(242,213,126,0.05),transparent);
+  transform:translateX(-100%);
+  transition:.6s;
+}
+
+.logo-card:hover::before{
+  transform:translateX(100%);
+}
+
+.logo-card:hover{
+  transform:translateY(-10px) scale(1.01);
+  border-color:rgba(242,213,126,0.35);
+  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* preview */
+.logo-preview{
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%),
+    #0b0b14;
+}
+
+.logo-preview img{
+  max-height:120px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+/* content */
+.logo-content{
+  padding:26px;
+}
+
+.logo-type{
+  font-size:11px;
+  letter-spacing:4px;
+  color:#F2D57E;
+  opacity:.9;
+}
+
+.logo-content h3{
+  margin-top:10px;
+  font-size:18px;
+}
+
+.logo-content p{
+  margin-top:6px;
+  font-size:14px;
+  opacity:.7;
+  line-height:1.5;
+}
+
+/* botón moderno */
+.download-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-top:16px;
+  padding:11px 18px;
+
+  border-radius:999px;
+  border:1px solid rgba(242,213,126,0.5);
+  color:#F2D57E;
+
+  text-decoration:none;
+  font-weight:600;
+
+  transition:.3s ease;
+}
+
+.download-btn:hover{
+  background:#F2D57E;
+  color:#0a0a0a;
+  transform:translateY(-2px);
+}
+
+/* =========================
+   PDF BLOCK (HERO VISUAL)
+========================= */
+.pdf-wrapper{
+  display:grid;
+  grid-template-columns:2.2fr 1fr;
+  gap:30px;
+}
+
+.pdf-frame{
+  height:620px;
+  border-radius:24px;
+  overflow:hidden;
+
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+
+  box-shadow:0 40px 120px rgba(0,0,0,0.7);
+  position:relative;
+}
+
+.pdf-frame iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* label */
+.pdf-frame::before{
+  content:"FOLLET CORPORATIU";
+  position:absolute;
+  top:16px;
+  left:20px;
+
+  font-size:11px;
+  letter-spacing:4px;
+  color:rgba(255,255,255,0.35);
+}
+
+.pdf-info{
+  padding:32px;
+  border-radius:24px;
+
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* =========================
+   COLORS (clean + luxe)
+========================= */
+.colors-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+
+.color-card{
+  border-radius:18px;
+  overflow:hidden;
+
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+
+  transition:.3s ease;
+}
+
+.color-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(242,213,126,0.25);
+}
+
+.color-preview{
+  height:100px;
+  width:100%;
+}
+
+.color-info{
+  padding:18px;
+}
+
+.color-hex{
+  font-family:monospace;
+  color:#F2D57E;
+  letter-spacing:1px;
+}
+
+.color-info h3{
+  margin-top:6px;
+  font-size:16px;
+}
+
+.color-info p{
+  margin-top:4px;
+  font-size:13px;
+  opacity:.7;
+  line-height:1.4;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1000px){
+  .logos-grid,
+  .colors-grid{
+    grid-template-columns:1fr;
+  }
+
+  .pdf-wrapper{
+    grid-template-columns:1fr;
+  }
+
+  .identitat-section{
+    padding:50px 20px;
+  }
+
+  .identitat-hero{
+    padding:80px 20px;
+  }
+
+  .identitat-title{
+    font-size:48px;
+  }
+}

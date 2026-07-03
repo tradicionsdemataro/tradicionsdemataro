@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacte · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <div class="contacte-page">
+
+    <!-- ===== HERO ===== -->
+    <section class="contacte-hero">
+      <div class="contacte-hero-inner">
+        <span class="section-index light">CONTACTE</span>
+        <h1 class="contacte-title">
+          Parlem<span class="accent-word">.</span>
+        </h1>
+        <p class="contacte-subtitle">
+          Tens una proposta, un dubte o vols col·laborar amb nosaltres?
+          Escriu-nos i et respondrem el més aviat possible.
+        </p>
+      </div>
+
+      <span class="contacte-hero-bg">CONTACTE</span>
+    </section>
+
+    <!-- ===== INFO RÀPIDA — GRID DESTACADA ===== -->
+    <section class="contacte-quick">
+      <div class="quick-grid">
+
+        <a href="mailto:info@tradicionsdemataro.cat" class="quick-card">
+          <span class="quick-icon">@</span>
+          <span class="quick-label">Email</span>
+          <span class="quick-value">info@tradicionsdemataro.cat</span>
+        </a>
+
+        <a href="tel:+34600000000" class="quick-card">
+          <span class="quick-icon quick-icon-blue">#</span>
+          <span class="quick-label">Telèfon</span>
+          <span class="quick-value">+34 600 000 000</span>
+        </a>
+
+        <div class="quick-card">
+          <span class="quick-icon quick-icon-pink">◎</span>
+          <span class="quick-label">Adreça</span>
+          <span class="quick-value">Ronda O'Donnell, 08302 Mataró</span>
+        </div>
+
+        <div class="quick-card">
+          <span class="quick-icon quick-icon-orange">○</span>
+          <span class="quick-label">Horari</span>
+          <span class="quick-value">Dl–Dv · 10:00–18:00h</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== FORMULARI + MAPA ===== -->
+    <section class="contacte-main">
+
+      <div class="contacte-form-wrapper">
+        <span class="section-index">ENVIA'NS UN MISSATGE</span>
+        <h2 class="contacte-form-title">
+          Escriu-nos i<br />et respondrem<br />
+          <span class="accent-word">aviat</span>.
+        </h2>
+
+        <form class="contacte-form" id="contacte-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="El teu nom"
+              />
+              <span class="form-error" id="err-nom"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Correu electrònic</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="nom@exemple.com"
+              />
+              <span class="form-error" id="err-email"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefon">Telèfon (opcional)</label>
+              <input
+                type="tel"
+                id="telefon"
+                name="telefon"
+                placeholder="+34 600 000 000"
+              />
+              <span class="form-error" id="err-telefon"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="assumpte">Assumpte</label>
+              <input
+                type="text"
+                id="assumpte"
+                name="assumpte"
+                placeholder="De què vols parlar?"
+              />
+              <span class="form-error" id="err-assumpte"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="missatge">Missatge</label>
+            <textarea
+              id="missatge"
+              name="missatge"
+              rows="6"
+              placeholder="Explica'ns en què et podem ajudar..."
+            ></textarea>
+            <span class="form-error" id="err-missatge"></span>
+          </div>
+
+          <div class="contacte-form-footer">
+            <button type="submit" class="contacte-submit" id="contacte-submit-btn">
+              Enviar missatge
+            </button>
+
+            <p class="form-feedback success" id="feedback-success" style="display:none;">
+              Missatge enviat correctament. Gràcies per escriure'ns!
+            </p>
+
+            <p class="form-feedback error" id="feedback-error" style="display:none;">
+              Hi ha hagut un error enviant el missatge. Torna-ho a provar.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="contacte-map-wrapper">
+        <div class="contacte-map-label">
+          <span>10 / MAPA</span>
+        </div>
+        <iframe
+          title="Mapa Tradicions de Mataró"
+          src="https://www.google.com/maps?q=Ronda%20O%27Donnell%2C%20Matar%C3%B3&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/overlay.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/contacte.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/agenda.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <div class="agenda-page">
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <section class="agenda-hero">
+      <div class="agenda-hero-inner">
+        <span class="section-index light">AGENDA</span>
+        <h1 class="agenda-hero-title">
+          CALENDARI<br />
+          <span class="accent-word">CULTURAL</span>
+        </h1>
+        <p class="agenda-hero-sub">
+          Tots els esdeveniments de Tradicions de Mataró al teu abast
+        </p>
+        <button class="agenda-hero-btn" id="agenda-hero-btn">
+          Veure el calendari <span class="agenda-hero-btn-arrow">↓</span>
+        </button>
+      </div>
+
+      <!-- generat per js/agenda.js -->
+      <div class="agenda-hero-stats" id="agenda-hero-stats"></div>
+
+      <span class="agenda-hero-bg">AGENDA</span>
+    </section>
+
+    <!-- ── INTRO + IMATGE ────────────────────────────────── -->
+    <section class="agenda-intro">
+      <div class="agenda-intro-inner">
+
+        <div class="agenda-intro-text-col">
+          <span class="section-index">01 / AGENDA</span>
+          <h2 class="agenda-intro-title">
+            Estigues al dia<br />
+            de tot el que passa<br />
+            a <span class="accent-word">Mataró</span>
+          </h2>
+          <p class="agenda-intro-body">
+            A Tradicions de Mataró t'oferim tota la informació sobre les festes,
+            celebracions i activitats culturals que no et pots perdre.
+            Consulta el nostre calendari i afegeix els esdeveniments al teu diari.
+          </p>
+          <button class="agenda-intro-cta" id="agenda-intro-cta">
+            Anar al calendari →
+          </button>
+        </div>
+
+        <div class="agenda-intro-img-col">
+          <div class="agenda-intro-img-frame">
+            <img src="images/gegants-cercavila.jpg" alt="Tradicions de Mataró" />
+            <div class="agenda-intro-img-overlay"></div>
+          </div>
+          <div class="agenda-intro-img-badge">
+            <span class="agenda-intro-img-badge-num">2015</span>
+            <span class="agenda-intro-img-badge-label">Fundació</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── FEATURES: generat per js/agenda.js ── -->
+    <section class="agenda-features" id="agenda-features"></section>
+
+    <!-- ── CALENDAR ──────────────────────────────────────── -->
+    <section class="agenda-calendar-section" id="agenda-calendar-section">
+      <div class="agenda-calendar-header">
+        <span class="section-index light">02 / CALENDARI</span>
+        <h2 class="agenda-calendar-title">
+          Tots els <span class="accent-word">esdeveniments</span>
+        </h2>
+        <p class="agenda-calendar-sub">
+          Fes clic a qualsevol acte per veure'n els detalls i afegir-lo al teu calendari.
+        </p>
+      </div>
+
+      <div class="agenda-calendar-wrapper">
+        <div class="agenda-calendar-topbar">
+          <span class="agenda-calendar-dot" style="background: var(--yellow)"></span>
+          <span class="agenda-calendar-dot" style="background: var(--blue)"></span>
+          <span class="agenda-calendar-dot" style="background: var(--pink)"></span>
+          <span class="agenda-calendar-label">GOOGLE CALENDAR · TRADICIONS DE MATARÓ</span>
+        </div>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?height=1200&wkst=2&ctz=Europe%2FMadrid&mode=MONTH&hl=ca&src=dHJhZGljaW9uc2RlbWF0YXJvQGdtYWlsLmNvbQ&color=%23ffd25a"
+          frameborder="0"
+          scrolling="no"
+          title="Calendari Tradicions Mataró"
+          loading="lazy"
+          class="agenda-iframe"
+        ></iframe>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/agenda-data.js"></script>
+  <script src="js/agenda.js"></script>
+</body>
+</html>

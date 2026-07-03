@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Identitat Corporativa · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/identitat.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <main class="identitat-page">
+
+    <!-- ===== HERO ===== -->
+    <section class="identitat-hero">
+      <div class="identitat-hero-inner">
+        <span class="section-index light">IDENTITAT CORPORATIVA</span>
+
+        <h1 class="identitat-title">
+          Identitat<br />
+          <span class="accent-word">Corporativa</span>
+        </h1>
+
+        <p class="identitat-subtitle">
+          Recursos oficials d'identitat visual per garantir una comunicació coherent i recognoscible.
+        </p>
+      </div>
+
+      <span class="identitat-bg">BRAND</span>
+    </section>
+
+    <!-- ===== INTRO ===== -->
+    <section class="identitat-section">
+      <div class="identitat-card">
+        <span class="identitat-label">Publicat per Tradicions de Mataró</span>
+
+        <h2>Identitat Corporativa / Institucional</h2>
+
+        <p>
+          Tradicions de Mataró posa a disposició els seus recursos gràfics oficials.
+        </p>
+
+        <blockquote>
+          Oferim recursos d'identitat visual per garantir coherència en totes les accions.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===== LOGOS ===== -->
+    <section class="identitat-section">
+      <div class="section-heading">
+        <span class="section-line"></span>
+        <h2>Logotips Oficials</h2>
+      </div>
+
+      <!-- generat per js/identitat.js -->
+      <div class="logos-grid" id="logos-grid"></div>
+    </section>
+
+    <!-- ===== PDF (IMPORTANT) ===== -->
+    <section class="identitat-section">
+      <div class="section-heading">
+        <span class="section-line"></span>
+        <h2>Fullet Corporatiu (PDF)</h2>
+      </div>
+
+      <div class="pdf-wrapper">
+        <div class="pdf-frame">
+          <iframe src="pdf/tradicions.pdf" title="Fullet Corporatiu"></iframe>
+        </div>
+
+        <div class="pdf-info">
+          <h3>Fullet institucional oficial</h3>
+          <p>
+            Document complet amb identitat, valors i comunicació de Tradicions de Mataró.
+          </p>
+
+          <a
+            href="pdf/tradicions.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="download-btn primary"
+          >
+            OBIR PDF
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COLORS ===== -->
+    <section class="identitat-section">
+      <div class="section-heading">
+        <span class="section-line"></span>
+        <h2>Colors Corporatius</h2>
+      </div>
+
+      <!-- generat per js/identitat.js -->
+      <div class="colors-grid" id="colors-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/identitat-data.js"></script>
+  <script src="js/identitat.js"></script>
+</body>
+</html>

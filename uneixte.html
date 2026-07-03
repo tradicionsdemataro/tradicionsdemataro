@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uneix-te · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/uneixte.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <div class="uneixte-page">
+
+    <!-- ===== HERO ===== -->
+    <section class="uneixte-hero">
+      <div class="uneixte-hero-inner">
+        <span style="margin-top: 20px;" class="section-index light">UNEIX-TE</span>
+        <h1 class="uneixte-title">
+          Forma<br />
+          part del<br />
+          <span class="accent-word">projecte.</span>
+        </h1>
+        <p class="uneixte-subtitle">
+          Busquem persones apassionades per la cultura i les tradicions de Mataró.
+          Si vols contribuir, aprendre i créixer amb nosaltres, aquest és el teu lloc.
+        </p>
+      </div>
+      <span class="uneixte-hero-bg">UNEIX-TE</span>
+    </section>
+
+    <!-- ===== QUICK STATS ===== -->
+    <section class="uneixte-quick">
+      <div class="uneixte-quick-grid">
+
+        <div class="uneixte-quick-card">
+          <span class="uneixte-quick-icon">
+            <i class="ti ti-users"></i>
+          </span>
+          <span class="uneixte-quick-label">Equip</span>
+          <span class="uneixte-quick-value">Voluntaris de Mataró</span>
+        </div>
+
+        <div class="uneixte-quick-card">
+          <span class="uneixte-quick-icon blue">
+            <i class="ti ti-calendar-event"></i>
+          </span>
+          <span class="uneixte-quick-label">Actes coberts</span>
+          <span class="uneixte-quick-value">+150 reportatges publicats</span>
+        </div>
+
+        <div class="uneixte-quick-card">
+          <span class="uneixte-quick-icon pink">
+            <i class="ti ti-clock"></i>
+          </span>
+          <span class="uneixte-quick-label">Dedicació</span>
+          <span class="uneixte-quick-value">Flexible · Adaptada als actes</span>
+        </div>
+
+        <div class="uneixte-quick-card">
+          <span class="uneixte-quick-icon orange">
+            <i class="ti ti-map-pin"></i>
+          </span>
+          <span class="uneixte-quick-label">On</span>
+          <span class="uneixte-quick-value">Mataró i voltants</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== BENEFICIS ===== -->
+    <section class="uneixte-beneficis">
+      <div class="uneixte-beneficis-inner">
+        <span class="section-index">QUÈ T'OFERIM</span>
+        <h2 class="uneixte-section-title">
+          Per què <span class="accent-word">unir-te</span>?
+        </h2>
+
+        <!-- generat per js/uneixte.js -->
+        <div class="beneficis-grid" id="beneficis-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== ÀREES ===== -->
+    <section class="uneixte-areas">
+      <div class="uneixte-areas-inner">
+        <span class="section-index light">ÀREES DE COL·LABORACIÓ</span>
+        <h2 class="uneixte-section-title">
+          On pots <span class="accent-word">aportar</span>?
+        </h2>
+
+        <!-- generat per js/uneixte.js -->
+        <div class="areas-grid" id="areas-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== FORMULARI + INFO ===== -->
+    <section class="uneixte-main">
+
+      <!-- FORM -->
+      <div class="uneixte-form-wrapper">
+        <span class="section-index">SOL·LICITUD DE COL·LABORACIÓ</span>
+        <h2 class="uneixte-form-title">
+          Explica'ns<br />
+          qui ets i com<br />
+          vols <span class="accent-word">ajudar</span>.
+        </h2>
+
+        <form class="uneixte-form" id="uneixte-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom i cognoms</label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                placeholder="El teu nom complet"
+              />
+              <span class="form-error" id="err-nom"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correu electrònic</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="nom@exemple.com"
+              />
+              <span class="form-error" id="err-email"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefon">Telèfon (opcional)</label>
+              <input
+                type="tel"
+                id="telefon"
+                name="telefon"
+                placeholder="+34 600 000 000"
+              />
+              <span class="form-error" id="err-telefon"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="area">Àrea d'interès</label>
+              <select id="area" name="area">
+                <option value="" disabled selected>Selecciona una àrea</option>
+                <!-- opcions generades per js/uneixte.js -->
+              </select>
+              <span class="form-error" id="err-area"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="experiencia">Experiència prèvia (opcional)</label>
+            <input
+              type="text"
+              id="experiencia"
+              name="experiencia"
+              placeholder="Ex: fotografia amateur, gestió de xarxes, sense experiència..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="motivacio">Per què vols unir-te?</label>
+            <textarea
+              id="motivacio"
+              name="motivacio"
+              rows="5"
+              placeholder="Explica'ns la teva motivació, disponibilitat o qualsevol cosa que vulguis compartir..."
+            ></textarea>
+            <span class="form-error" id="err-motivacio"></span>
+          </div>
+
+          <div class="uneixte-form-footer">
+            <button type="submit" class="uneixte-submit" id="uneixte-submit-btn">
+              Enviar sol·licitud
+            </button>
+
+            <p class="uneixte-feedback success" id="feedback-success" style="display:none;">
+              Sol·licitud enviada. Et contactarem aviat!
+            </p>
+            <p class="uneixte-feedback error" id="feedback-error" style="display:none;">
+              Hi ha hagut un error. Torna-ho a provar.
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- PANELL INFO + FAQ -->
+      <div class="uneixte-info-panel">
+        <div>
+          <p class="uneixte-info-panel-title">Tens dubtes?</p>
+          <p class="uneixte-info-panel-sub">
+            Aquí tens les preguntes més freqüents sobre com funciona la col·laboració
+            amb Tradicions de Mataró.
+          </p>
+        </div>
+
+        <hr class="uneixte-info-divider" />
+
+        <!-- generat per js/uneixte.js -->
+        <div class="faq-list" id="faq-list"></div>
+
+        <hr class="uneixte-info-divider" />
+
+        <div>
+          <p class="uneixte-info-panel-sub">
+            Prefereixes escriure'ns directament?
+          </p>
+          <a
+            href="/contacte"
+            style="display:inline-flex; align-items:center; gap:8px; margin-top:14px; font-family:var(--font-mono); font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--yellow); text-decoration:none;"
+          >
+            Vés a Contacte →
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/uneixte-data.js"></script>
+  <script src="js/uneixte.js"></script>
+</body>
+</html>

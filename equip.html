@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equip · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Mateixos fulls d'estil globals que fa servir index.html -->
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/equip.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <main class="equip-page">
+
+    <!-- ── HERO ─────────────────────────────────────── -->
+    <section class="equip-hero">
+      <div class="equip-hero-inner">
+
+        <span class="section-index light">
+          01 / EQUIP
+        </span>
+
+        <h1 class="equip-hero-title">
+          LES PERSONES<br />
+          <span>QUE FAN CULTURA</span>
+        </h1>
+
+        <p class="equip-hero-sub">
+          Un equip compromès amb la divulgació,
+          la cultura popular i la memòria col·lectiva
+          de Mataró.
+        </p>
+
+      </div>
+
+      <span class="equip-hero-bg">
+        EQUIP
+      </span>
+    </section>
+
+    <!-- ── PRESENTACIÓ ──────────────────────────────── -->
+    <section class="equip-intro">
+
+      <div class="equip-intro-grid">
+
+        <div>
+          <span class="section-index">
+            02 / PRESENTACIÓ
+          </span>
+
+          <h2>
+            Un projecte construït
+            <span> entre persones</span>
+          </h2>
+
+          <p>
+            Tradicions de Mataró és possible gràcies a
+            un grup de persones que comparteixen una
+            mateixa passió: preservar i difondre la
+            cultura popular de la ciutat.
+          </p>
+
+          <p>
+            El nostre equip combina experiència,
+            creativitat i compromís per generar
+            continguts culturals de qualitat.
+          </p>
+
+        </div>
+
+        <div class="equip-stats">
+
+          <div class="stat-card">
+            <span>10+</span>
+            <small>Membres</small>
+          </div>
+
+          <div class="stat-card">
+            <span>2015</span>
+            <small>Des de</small>
+          </div>
+
+          <div class="stat-card">
+            <span>150+</span>
+            <small>Reportatges</small>
+          </div>
+
+          <div class="stat-card">
+            <span>100%</span>
+            <small>Cultura local</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ── ÀREES ────────────────────────────────────── -->
+    <section class="equip-areas">
+
+      <span class="section-index">
+        03 / ÀREES
+      </span>
+
+      <h2 class="section-title">
+        Com treballem
+      </h2>
+
+      <div class="areas-grid">
+
+        <article>
+          <span>✍️</span>
+          <h3>Redacció</h3>
+          <p>Articles, entrevistes i notícies.</p>
+        </article>
+
+        <article>
+          <span>📸</span>
+          <h3>Fotografia</h3>
+          <p>Cobertura visual dels actes.</p>
+        </article>
+
+        <article>
+          <span>🎥</span>
+          <h3>Audiovisual</h3>
+          <p>Vídeos i reportatges.</p>
+        </article>
+
+        <article>
+          <span>🌐</span>
+          <h3>Digital</h3>
+          <p>Xarxes socials i difusió.</p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ── MEMBRES ──────────────────────────────────── -->
+    <section class="equip-team">
+
+      <span class="section-index">
+        04 / MEMBRES
+      </span>
+
+      <h2 class="section-title">
+        El nostre equip
+      </h2>
+
+      <!-- generat per js/equip.js -->
+      <div class="equip-grid" id="equip-grid"></div>
+
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer"></footer>
+
+  <!-- Scripts: primer les dades, després el renderitzat -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/equip-data.js"></script>
+  <script src="js/equip.js"></script>
+</body>
+</html>

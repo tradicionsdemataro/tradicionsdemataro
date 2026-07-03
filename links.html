@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links d'interès · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/links.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+</head>
+<body>
+
+  <div class="links-page">
+
+    <!-- ===== NAVBAR ===== -->
+    <header id="navbar"></header>
+
+    <!-- ===== OVERLAY DE CERCA ===== -->
+    <div id="search-overlay-root"></div>
+
+    <!-- ===== HERO ===== -->
+    <section class="links-hero">
+      <span class="links-hero-bg-text">LINKS</span>
+      <div class="links-hero-inner">
+        <span class="links-hero-index">
+          <i class="ti ti-link" style="margin-right:8px;"></i>
+          DIRECTORI CULTURAL · MATARÓ
+        </span>
+        <h1 class="links-hero-title">
+          LINKS<br />
+          <span class="lh-accent">D'INTERÈS</span>
+        </h1>
+        <p class="links-hero-desc">
+          Una selecció de webs, entitats i recursos relacionats amb la vida cultural de Mataró:
+          mitjans locals, associacions, música, patrimoni, tradicions, festivals i projectes educatius.
+        </p>
+        <div class="links-hero-pills">
+          <span class="lh-pill p-yellow"><strong id="lh-count-categories">0</strong> categories</span>
+          <span class="lh-pill p-blue"><strong id="lh-count-links">0</strong> links</span>
+          <span class="lh-pill p-pink"><i class="ti ti-external-link"></i> tots externs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BUSCADOR + FILTRES (sticky) ===== -->
+    <div class="links-controls">
+
+      <!-- Search -->
+      <div class="lk-search-wrap">
+        <i class="ti ti-search lk-search-icon"></i>
+        <input
+          class="lk-search-input"
+          id="lk-search-input"
+          type="text"
+          placeholder="Cerca un recurs…"
+          spellcheck="false"
+        />
+        <button class="lk-search-clear" id="lk-search-clear" aria-label="Esborrar cerca" style="display:none;">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+
+      <!-- Category filter pills: generat per js/links.js -->
+      <div class="lk-filter-pills" id="lk-filter-pills"></div>
+
+      <!-- Resultat count: generat per js/links.js -->
+      <div class="lk-results-count" id="lk-results-count"></div>
+    </div>
+
+    <!-- ===== BODY: generat per js/links.js ===== -->
+    <div class="links-body" id="links-body"></div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer"></footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/links-data.js"></script>
+  <script src="js/links.js"></script>
+</body>
+</html>

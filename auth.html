@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accedeix · Tradicions de Mataró</title>
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Estils -->
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/overlay.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header id="navbar"></header>
+
+  <!-- ===== OVERLAY DE CERCA ===== -->
+  <div id="search-overlay-root"></div>
+
+  <div class="auth-page">
+
+    <!-- ===== ESQUERRA — BRAND PANEL ===== -->
+    <div class="auth-brand">
+      <div class="auth-brand-inner">
+
+        <div class="auth-brand-top">
+          <span class="auth-brand-index">EST. 2015</span>
+          <h1 class="auth-brand-title">
+            TRADICIONS<br />
+            DE<br />
+            <span class="accent-word">MATARÓ</span>
+          </h1>
+        </div>
+
+        <div class="auth-brand-quote">
+          <p>"Teixint tradicions,<br />creant futur."</p>
+        </div>
+
+        <div class="auth-brand-dots">
+          <span style="background: var(--yellow)"></span>
+          <span style="background: var(--blue)"></span>
+          <span style="background: var(--pink)"></span>
+          <span style="background: var(--orange)"></span>
+        </div>
+
+      </div>
+
+      <!-- generat per js/auth.js: 24 cel·les de fons -->
+      <div class="auth-brand-grid-bg" id="auth-brand-grid-bg"></div>
+    </div>
+
+    <!-- ===== DRETA — FORM PANEL ===== -->
+    <div class="auth-panel">
+
+      <!-- MODE TABS -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login" type="button">Accedir</button>
+        <button class="auth-tab" id="tab-register" type="button">Registrar-se</button>
+        <span class="auth-tab-indicator" id="auth-tab-indicator"></span>
+      </div>
+
+      <!-- ===== LOGIN ===== -->
+      <div class="auth-form-block visible" id="block-login">
+        <div class="auth-form-header">
+          <h2>Benvingut<span class="accent-word">.</span></h2>
+          <p>Accedeix al teu compte per continuar.</p>
+        </div>
+
+        <form class="auth-form" id="login-form" novalidate>
+          <div class="auth-field">
+            <label for="login-email">Correu electrònic</label>
+            <input
+              id="login-email"
+              name="email"
+              type="email"
+              placeholder="nom@exemple.com"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="login-password">Contrasenya</label>
+            <input
+              id="login-password"
+              name="password"
+              type="password"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <div class="auth-form-row">
+            <a href="/recover" class="auth-link">Has oblidat la contrasenya?</a>
+          </div>
+
+          <p class="auth-feedback error" id="login-error" style="display:none;"></p>
+          <p class="auth-feedback success" id="login-success" style="display:none;">
+            Sessió iniciada correctament!
+          </p>
+
+          <button type="submit" class="auth-submit" id="login-submit-btn">
+            <span id="login-submit-label">Accedir</span>
+            <span class="auth-submit-arrow">→</span>
+          </button>
+        </form>
+
+        <p class="auth-switch-hint">
+          Encara no tens compte?
+          <button class="auth-switch-link" id="switch-to-register" type="button">
+            Registra't aquí
+          </button>
+        </p>
+      </div>
+
+      <!-- ===== REGISTER ===== -->
+      <div class="auth-form-block hidden" id="block-register">
+        <div class="auth-form-header">
+          <h2>Crea un compte<span class="accent-word">.</span></h2>
+          <p>Uneix-te a la comunitat de Tradicions de Mataró.</p>
+        </div>
+
+        <form class="auth-form" id="register-form" novalidate>
+          <div class="auth-field">
+            <label for="reg-nom">Nom complet</label>
+            <input
+              id="reg-nom"
+              name="nom"
+              type="text"
+              placeholder="El teu nom"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="reg-email">Correu electrònic</label>
+            <input
+              id="reg-email"
+              name="email"
+              type="email"
+              placeholder="nom@exemple.com"
+              required
+            />
+          </div>
+
+          <div class="auth-fields-row">
+            <div class="auth-field">
+              <label for="reg-password">Contrasenya</label>
+              <input
+                id="reg-password"
+                name="password"
+                type="password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+
+            <div class="auth-field">
+              <label for="reg-password2">Confirma</label>
+              <input
+                id="reg-password2"
+                name="password2"
+                type="password"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+          </div>
+
+          <p class="auth-feedback error" id="register-error" style="display:none;"></p>
+          <p class="auth-feedback success" id="register-success" style="display:none;">
+            Compte creat! Benvingut/da!
+          </p>
+
+          <button type="submit" class="auth-submit" id="register-submit-btn">
+            <span id="register-submit-label">Crear compte</span>
+            <span class="auth-submit-arrow">→</span>
+          </button>
+        </form>
+
+        <p class="auth-switch-hint">
+          Ja tens compte?
+          <button class="auth-switch-link" id="switch-to-login" type="button">
+            Accedeix aquí
+          </button>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
