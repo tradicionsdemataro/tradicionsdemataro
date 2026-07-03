@@ -7,8 +7,8 @@ const timelineParagraphs = [
   {
     year: 2015,
     text: "El nostre blog Tradicions de Mataró va començar amb la idea d'explicar la cultura popular de la ciutat.",
-    audio: "/audio/2015.mp3",
-    img: "/images/timeline/2015.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2015.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2015.jpg",
     trobans: [
       { titol: "Trobada fundacional al Cafè del Teatre", desc: "Primera reunió de l'equip per definir la línia editorial del blog." }
     ]
@@ -16,8 +16,8 @@ const timelineParagraphs = [
   {
     year: 2016,
     text: "Vam publicar les primeres entrades amb fotos i vídeos de la Mostra de Gegants, mostrant la riquesa cultural de Mataró.",
-    audio: "/audio/2016.mp3",
-    img: "/images/timeline/2016.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2016.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2016.jpg",
     trobans: [
       { titol: "Mostra de Gegants 2016", desc: "Cobertura completa amb fotografies i vídeos exclusius de la rua." },
       { titol: "Taller de fotografia cultural", desc: "Sessió formativa amb el col·lectiu per millorar la qualitat audiovisual." }
@@ -26,8 +26,8 @@ const timelineParagraphs = [
   {
     year: 2017,
     text: "Comencem a fer reportatges més complets amb entrevistes a experts locals i fotografies exclusives.",
-    audio: "/audio/2017.mp3",
-    img: "/images/timeline/2017.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2017.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2017.jpg",
     trobans: [
       { titol: "Entrevista al Museu de Mataró", desc: "Conversa amb l'historiador local sobre les arrels de les festes majors." }
     ]
@@ -35,7 +35,7 @@ const timelineParagraphs = [
   {
     year: 2018,
     text: "Creació de contingut original: entrevistes, noves seccions i col·laboració amb artistes locals.",
-    audio: "/audio/2018.mp3",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2018.mp3",
     img: "/images/timeline/2018.jpg",
     trobans: [
       { titol: "Trobada amb artistes locals", desc: "Sessió de col·laboració al Tecla Sala per definir noves seccions." }
@@ -44,7 +44,7 @@ const timelineParagraphs = [
   {
     year: 2019,
     text: "Naixement de la nostra presència a Instagram per connectar amb la comunitat jove.",
-    audio: "/audio/2019.mp3",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2019.mp3",
     img: "/images/timeline/2019.jpg",
     trobans: [
       { titol: "Llançament del compte d'Instagram", desc: "Primera trobada amb seguidors per presentar el nou canal." }
@@ -53,8 +53,8 @@ const timelineParagraphs = [
   {
     year: 2020,
     text: "Any especial amb contingut adaptat des de casa, incloent tutorials i activitats culturals en línia.",
-    audio: "/audio/2020.mp3",
-    img: "/images/timeline/2020.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2020.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2020.jpg",
     trobans: [
       { titol: "Trobades virtuals setmanals", desc: "Sessions online amb la comunitat per mantenir el contacte durant el confinament." }
     ]
@@ -62,8 +62,8 @@ const timelineParagraphs = [
   {
     year: 2021,
     text: "Cobertura d'actes amb mascareta i formats digitals innovadors per mantenir viva la tradició.",
-    audio: "/audio/2021.mp3",
-    img: "/images/timeline/2021.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2021.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2021.jpg",
     trobans: [
       { titol: "Festa Major adaptada", desc: "Trobada a l'aire lliure amb mesures de seguretat i format híbrid." }
     ]
@@ -71,8 +71,8 @@ const timelineParagraphs = [
   {
     year: 2022,
     text: "Creixement amb exposicions, col·laboracions i difusió de la cultura popular en mitjans digitals.",
-    audio: "/audio/2022.mp3",
-    img: "/images/timeline/2022.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2022.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2022.jpg",
     trobans: [
       { titol: "Exposició 'Memòria Viva'", desc: "Inauguració amb trobada d'entitats culturals de la ciutat." },
       { titol: "Col·laboració amb Ràdio Mataró", desc: "Primera trobada per planificar continguts conjunts." }
@@ -81,8 +81,8 @@ const timelineParagraphs = [
   {
     year: 2023,
     text: "Conte de Sant Jordi i projectes especials amb participació de col·legis i associacions culturals.",
-    audio: "/audio/2023.mp3",
-    img: "/images/timeline/2023.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2023.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2023.jpg",
     trobans: [
       { titol: "Sant Jordi als col·legis", desc: "Trobada amb estudiants per presentar el conte commemoratiu." }
     ]
@@ -90,8 +90,8 @@ const timelineParagraphs = [
   {
     year: 2024,
     text: "Expansió del contingut audiovisual, amb vídeos documentals i entrevistes en profunditat.",
-    audio: "/audio/2024.mp3",
-    img: "/images/timeline/2024.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2024.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2024.jpg",
     trobans: [
       { titol: "Rodatge del documental", desc: "Trobada amb els protagonistes per planificar les entrevistes en profunditat." }
     ]
@@ -99,8 +99,8 @@ const timelineParagraphs = [
   {
     year: 2025,
     text: "Estrenem nova marca amb el lema: 'Teixint tradicions, creant futur', reflectint la nostra missió.",
-    audio: "/audio/2025.mp3",
-    img: "/images/timeline/2025.jpg",
+    audio: "https://tradicionsdemataro.github.io/tradicionsdemataro/audio/2025.mp3",
+    img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/timeline/2025.jpg",
     trobans: [
       { titol: "Presentació de la nova marca", desc: "Esdeveniment públic per donar a conèixer el rebranding i el nou lema." },
       { titol: "Trobada amb col·laboradors", desc: "Reunió per definir els objectius i projectes del 2025." }
@@ -115,9 +115,9 @@ const sliderItems = [
 ];
 
 const imageCarousel = [
-  "/images/carrusel1.jpg",
-  "/images/carrusel2.jpg",
-  "/images/carrusel3.jpg"
+  "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carrusel1.jpg",
+  "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carrusel2.jpg",
+  "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carrusel3.jpg"
 ];
 
 const featuredArticles = [
@@ -144,21 +144,21 @@ const featuredTrobans = [
 ];
 
 const galleryItems = [
-  { img: "/images/gegants-cercavila.jpg", label: "Mostra de Gegants", year: "2024", className: "g1" },
-  { img: "/images/rovafabes2.jpg",        label: "Festa Major",        year: "2023", className: "g2" },
-  { img: "/images/mort.jpg",              label: "Mort d'en Pallofa",  year: "2022", className: "g3" },
-  { img: "/images/carnaval2.jpg",         label: "Carnaval",           year: "2025", className: "g4" },
-  { img: "/images/rovafabes3.jpg",        label: "Carrers de Mataró",  year: "2021", className: "g5" },
-  { img: "/images/cercavila2.jpg",        label: "Memòria Viva",       year: "2020", className: "g6" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/gegants-cercavila.jpg", label: "Mostra de Gegants", year: "2024", className: "g1" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes2.jpg",        label: "Festa Major",        year: "2023", className: "g2" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/mort.jpg",              label: "Mort d'en Pallofa",  year: "2022", className: "g3" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carnaval2.jpg",         label: "Carnaval",           year: "2025", className: "g4" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes3.jpg",        label: "Carrers de Mataró",  year: "2021", className: "g5" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/cercavila2.jpg",        label: "Memòria Viva",       year: "2020", className: "g6" },
 ];
 
 const galleryStrip = [
-  { img: "/images/gegants-cercavila.jpg", label: "Castellers" },
-  { img: "/images/rovafabes2.jpg",        label: "Sardanes" },
-  { img: "/images/mort.jpg",              label: "Correfoc" },
-  { img: "/images/carnaval2.jpg",         label: "Rua de Carnaval" },
-  { img: "/images/rovafabes3.jpg",        label: "Gralla" },
-  { img: "/images/cercavila2.jpg",        label: "Havaneres" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/gegants-cercavila.jpg", label: "Castellers" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes2.jpg",        label: "Sardanes" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/mort.jpg",              label: "Correfoc" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carnaval2.jpg",         label: "Rua de Carnaval" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes3.jpg",        label: "Gralla" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/cercavila2.jpg",        label: "Havaneres" },
 ];
 
 const videoSideItems = [
@@ -197,11 +197,11 @@ const videoSideItems = [
 ];
 
 const videoReels = [
-  { thumb: "/images/cercavila2.jpg",        label: "Cercavila nocturna",  duration: "0:58" },
-  { thumb: "/images/carnaval2.jpg",         label: "Foc i música",        duration: "1:12" },
-  { thumb: "/images/gegants-cercavila.jpg", label: "Gegants infantils",   duration: "0:44" },
-  { thumb: "/images/rovafabes3.jpg",        label: "Sardana a la plaça",  duration: "1:05" },
-  { thumb: "/images/mort.jpg",              label: "Tarda de carnaval",   duration: "0:37" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/cercavila2.jpg",        label: "Cercavila nocturna",  duration: "0:58" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carnaval2.jpg",         label: "Foc i música",        duration: "1:12" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/gegants-cercavila.jpg", label: "Gegants infantils",   duration: "0:44" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes3.jpg",        label: "Sardana a la plaça",  duration: "1:05" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/mort.jpg",              label: "Tarda de carnaval",   duration: "0:37" },
 ];
 
 const PUBLI_PER_PAGE = 4;
