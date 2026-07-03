@@ -81,12 +81,7 @@ function renderSearchContent(container, onCloseCallback) {
           <span class="filter-badge" style="display:none;"></span>
         </button>
 
-        <button
-          class="mobile-search-close"
-          data-action="close-search-content"
-          aria-label="Tancar cerca"
-          style="position:relative; z-index:9999; width:34px; height:34px; display:flex; align-items:center; justify-content:center; border:none; border-radius:50%; background:rgba(20,20,20,0.85); color:#fff; font-size:16px; line-height:1; cursor:pointer; margin-left:8px; flex-shrink:0;"
-        >✕</button>
+        <button class="mobile-search-close" data-action="close-search-content" aria-label="Tancar cerca">✕</button>
       </div>
 
       <aside class="filters-sidebar">

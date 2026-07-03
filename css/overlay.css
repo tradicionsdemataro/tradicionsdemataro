@@ -3,9 +3,9 @@
    ============================================= */
 
 :root {
-  --navbar-height: 88px;
-  --navbar-height-laptop: 88px;
-  --navbar-height-mobile: 76px;
+  --navbar-height: 64px;
+  --navbar-height-laptop: 56px;
+  --navbar-height-mobile: 56px;
 }
 
 /* =============================================
@@ -13,11 +13,10 @@
    ============================================= */
 
 .search-overlay {
-  margin-top: -45px !important;
   position: fixed;
   inset: 0;
   width: 100%;
-  height: 120%;
+  height: 100%;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -73,35 +72,42 @@
 }
 
 /* =============================================
-   CLOSE BUTTON
+   CLOSE BUTTON — sempre visible, per sobre de tot
    ============================================= */
 .overlay-close {
   position: fixed;
-  top: 24px;
+  top: calc(var(--navbar-height) / 2 - 20px);
   right: 24px;
-  z-index: 1003;
+  z-index: 1005;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--line-strong);
-  background: rgba(10, 10, 10, 0.55);
+  border: 1px solid var(--line-strong, rgba(255,255,255,0.25));
+  background: rgba(10, 10, 10, 0.75);
   backdrop-filter: blur(10px);
-  color: var(--text);
+  color: var(--text, #fff);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.overlay-close svg {
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
 }
 
 .overlay-close:hover {
-  color: var(--yellow);
-  border-color: var(--yellow);
+  color: var(--yellow, #ffd25a);
+  border-color: var(--yellow, #ffd25a);
+  background: rgba(10, 10, 10, 0.92);
   transform: rotate(90deg);
 }
 
 /* =============================================
-   SEARCH CONTENT LAYOUT
+   SEARCH CONTENT LAYOUT — una mica més ample
    ============================================= */
 .search-content {
   position: relative;
@@ -126,12 +132,36 @@
   display: none;
 }
 
+/* Botó de tancar dins el topbar mòbil — mateix llenguatge visual que overlay-close */
+.mobile-search-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong, rgba(255,255,255,0.25));
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(10px);
+  color: var(--text, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.mobile-search-close:hover {
+  color: var(--yellow, #ffd25a);
+  border-color: var(--yellow, #ffd25a);
+}
+
 /* =============================================
    FILTERS SIDEBAR
    ============================================= */
 .filters-sidebar {
-  width: 280px;
-  min-width: 280px;
+  width: 320px;
+  min-width: 320px;
   padding: 32px 28px;
   overflow-y: auto;
   border-right: 1px solid var(--line);
@@ -373,7 +403,7 @@
    ============================================= */
 .results-area {
   flex: 1;
-  padding: 32px 36px 40px;
+  padding: 32px 40px 40px;
   overflow-y: auto;
 }
 
@@ -411,11 +441,11 @@
 }
 
 /* =============================================
-   RESULTS GRID
+   RESULTS GRID — més ample, més columnes en pantalles grans
    ============================================= */
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 20px;
 }
 
@@ -803,12 +833,10 @@
     letter-spacing: 0;
   }
 
-  /* ── CLOSE BUTTON — posicionat respecte al navbar mobile ── */
+  /* ── El botó overlay-close (fixed) queda amagat darrere el topbar mòbil;
+     usem el .mobile-search-close del topbar com a tancament principal ── */
   .overlay-close {
-    top: calc(var(--navbar-height-mobile) / 2 - 20px);
-    right: 16px;
-    width: 40px;
-    height: 40px;
+    display: none;
   }
 
   /* ── FILTERS SIDEBAR — drawer lateral en mobile ── */
