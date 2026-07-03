@@ -3,13 +3,13 @@
 // ============================================================
 
 const pagines = [
-  { nom: "Home", url: "/home", imatge: "/images/home.png", tipusLabel: "Pàgina", categoria: "General" },
-  { nom: "About", url: "/qui-som", imatge: "/images/quisom.png", tipusLabel: "Pàgina", categoria: "Informació" },
-  { nom: "Contact", url: "/contacte", imatge: "/images/contacte.png", tipusLabel: "Pàgina", categoria: "Contacte" },
-  { nom: "Agenda", url: "/agenda", imatge: "/images/agenda.png", tipusLabel: "Agenda", categoria: "Activitat familiar" },
-  { nom: "Projectes", url: "/projectes", imatge: "/images/projectes.png", tipusLabel: "Projecte", categoria: "Tradicional" },
-  { nom: "Publicacions", url: "/publicacions", imatge: "/images/publicacions.png", tipusLabel: "Publicació", categoria: "Exposicions i +" },
-  { nom: "Events", url: "/events", imatge: "/images/events.png", tipusLabel: "Event", categoria: "Música" },
+  { nom: "Home", url: "/home", imatge: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/home.png", tipusLabel: "Pàgina", categoria: "General" },
+  { nom: "About", url: "/qui-som", imatge: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/quisom.png", tipusLabel: "Pàgina", categoria: "Informació" },
+  { nom: "Contact", url: "/contacte", imatge: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/contacte.png", tipusLabel: "Pàgina", categoria: "Contacte" },
+  { nom: "Agenda", url: "/agenda", imatge: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/agenda.png", tipusLabel: "Agenda", categoria: "Activitat familiar" },
+  { nom: "Projectes", url: "/projectes", imatge: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/projectes.png", tipusLabel: "Projecte", categoria: "Tradicional" },
+  { nom: "Publicacions", url: "/publicacions", imatge: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/publicacions.png", tipusLabel: "Publicació", categoria: "Exposicions i +" },
+  { nom: "Events", url: "/events", imatge: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/events.png", tipusLabel: "Event", categoria: "Música" },
 ];
 
 const ambits = [
