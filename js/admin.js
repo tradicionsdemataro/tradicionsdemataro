@@ -31,21 +31,43 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ── Auth (equivalent a useAdminAuth) ────────────────────────────────
 async function checkAdminAuth() {
   const token = getAdminToken();
-  if (!token) return null;
+  console.log("TOKEN:", token);
+
+  if (!token) {
+    console.log("No hay token");
+    return null;
+  }
+
   try {
-    const res = await fetch(`${API}/api/auth/me`, { headers: { Authorization: `Bearer ${token}` } });
+    console.log("Llamando a:", `${API}/api/auth/me`);
+
+    const res = await fetch(`${API}/api/auth/me`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    console.log("STATUS:", res.status);
+
+    const text = await res.text();
+    console.log("RESPUESTA:", text);
+
     if (!res.ok) return null;
-    const data = await res.json();
+
+    const data = JSON.parse(text);
     const u = data.user ?? data;
+
+    console.log("USUARIO:", u);
+
     return (u.rol === "admin" || u.role === "admin") ? u : null;
-  } catch {
+
+  } catch (err) {
+    console.error(err);
     return null;
   }
 }
-
 // ── App shell ────────────────────────────────────────────────────
 function renderApp(root, user) {
   const state = { active: "dashboard", sideOpen: false };
