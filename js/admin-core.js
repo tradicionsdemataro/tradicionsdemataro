@@ -4,7 +4,7 @@
 // EmptyState, Stars, ImagePicker, GaleriaPicker de AdminPanel.jsx)
 // ============================================================
 
-const API = "https://backend-tradicions.onrender.com/";
+const API = "https://backend-tradicions.onrender.com";
 
 function getAdminToken() {
   return localStorage.getItem("token") || sessionStorage.getItem("token");
