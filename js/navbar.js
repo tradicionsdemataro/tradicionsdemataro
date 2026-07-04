@@ -220,7 +220,6 @@
 
     const mobileMenu = (nb.isMobile && nb.menuOpen) ? `
       <div class="mobile-menu open">
-        <button class="close-menu" data-action="close-menu">✕</button>
 
         <button type="button" class="search-toggle mobile-search-toggle" data-action="toggle-search-mobile">
           <img src="${nb.isSearchOpen ? SEARCH_CLOSE_ICON_MOBILE : SEARCH_ICON_MOBILE}" alt="Buscar" />
