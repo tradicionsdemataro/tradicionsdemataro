@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ca">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="https://tradicionsdemataro.github.io/tradicionsdemataro/images/logo2.jpg">
+<title>404 · Tradicions de Mataró</title>
+
 <script>
 const path = location.pathname;
 
@@ -21,17 +25,161 @@ const routes = {
   "/auth": "/auth.html",
   "/xarxes": "/xarxes.html",
   "/priv": "/priv.html",
-  "/avis": "/avis.html",
-
-
+  "/avis": "/avis.html"
 };
 
 if (routes[path]) {
-    location.replace(routes[path]);
+  location.replace(routes[path]);
 }
 </script>
+
+<style>
+:root{
+  --bg:#07070b;
+  --card:#111827;
+  --gold:#F2D57E;
+  --coral:#F2637E;
+  --text:#ffffff;
+  --muted:rgba(255,255,255,.7);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,sans-serif;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+}
+
+.error-page{
+  position:relative;
+  text-align:center;
+  max-width:700px;
+  padding:40px;
+  z-index:2;
+}
+
+.error-bg{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  font-size:22rem;
+  font-weight:900;
+  opacity:.03;
+  color:white;
+
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+}
+
+.error-code{
+  font-size:8rem;
+  line-height:1;
+  font-weight:900;
+  color:var(--gold);
+  position:relative;
+  z-index:2;
+}
+
+.error-title{
+  margin-top:20px;
+  font-size:3rem;
+  font-weight:800;
+  position:relative;
+  z-index:2;
+}
+
+.error-text{
+  margin:25px auto;
+  max-width:500px;
+
+  color:var(--muted);
+  font-size:1.1rem;
+  line-height:1.8;
+
+  position:relative;
+  z-index:2;
+}
+
+.error-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  margin-top:10px;
+  padding:16px 28px;
+
+  border:none;
+  border-radius:999px;
+
+  background:var(--gold);
+  color:#07070b;
+
+  text-decoration:none;
+  font-weight:700;
+
+  transition:.3s;
+}
+
+.error-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 40px rgba(242,213,126,.25);
+}
+
+@media (max-width:768px){
+
+  .error-bg{
+    font-size:12rem;
+  }
+
+  .error-code{
+    font-size:5rem;
+  }
+
+  .error-title{
+    font-size:2rem;
+  }
+
+}
+</style>
 </head>
+
 <body>
-<h1>404</h1>
+
+<div class="error-page">
+
+  <div class="error-bg">404</div>
+
+  <h1 class="error-code">404</h1>
+
+  <h2 class="error-title">
+    Aquesta pàgina no existeix
+  </h2>
+
+  <p class="error-text">
+    La pàgina que busques no s'ha pogut trobar o ha estat moguda.
+    Pots tornar a la pàgina principal de Tradicions de Mataró.
+  </p>
+
+  <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/" class="error-btn">
+    Tornar a l'inici →
+  </a>
+
+</div>
+
 </body>
 </html>

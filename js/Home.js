@@ -533,7 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
     state.publiLoading = true;
     renderPublicacions();
     try {
-      const res = await fetch("http://localhost:5000/publi");
+      const res = await fetch("https://backend-tradicions.onrender.com/publi");
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       const all = Array.isArray(data) ? data : (data.publicacions ?? []);

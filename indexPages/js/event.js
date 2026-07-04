@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      let res = await fetch(`http://localhost:5000/events/${id}`);
+      let res = await fetch(`https://backend-tradicions.onrender.com/events/${id}`);
 
       if (res.ok) {
         const data = await res.json();
@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Fallback: agafa tots i filtra
-      res = await fetch("http://localhost:5000/events");
+      res = await fetch("https://backend-tradicions.onrender.com/events");
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       const all = Array.isArray(data) ? data : (data.events ?? []);

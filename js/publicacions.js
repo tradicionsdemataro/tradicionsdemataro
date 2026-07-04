@@ -45,7 +45,7 @@ async function fetchPublicacions() {
   render();
 
   try {
-    const res = await fetch("http://localhost:5000/publi");
+    const res = await fetch("https://backend-tradicions.onrender.com/publi");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     state.publicacions = Array.isArray(data) ? data : data.publicacions ?? [];

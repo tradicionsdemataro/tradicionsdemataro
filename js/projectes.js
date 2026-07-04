@@ -44,7 +44,7 @@ async function fetchProjectes() {
   render();
 
   try {
-    const res = await fetch("http://localhost:5000/projectes");
+    const res = await fetch("https://backend-tradicions.onrender.com/projectes");
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     state.projectes = Array.isArray(data) ? data : data.projectes ?? [];

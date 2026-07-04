@@ -27,7 +27,7 @@
 
   async function fetchCategorias() {
     try {
-      const res = await fetch("http://localhost:5000/projectes");
+      const res = await fetch("https://backend-tradicions.onrender.com/projectes");
       const data = await res.json();
       nb.categorias = [...new Set(data.projectes.map(p => p.categoria))];
       render();
@@ -38,7 +38,7 @@
 
   async function fetchCategoriesPubli() {
     try {
-      const res = await fetch("http://localhost:5000/publi");
+      const res = await fetch("https://backend-tradicions.onrender.com/publi");
       const data = await res.json();
       nb.categoriesPubli = [...new Set(
         (Array.isArray(data) ? data : data.publicacions || [])
@@ -53,7 +53,7 @@
 
   async function fetchCategoriesEvents() {
     try {
-      const res = await fetch("http://localhost:5000/events");
+      const res = await fetch("https://backend-tradicions.onrender.com/events");
       const data = await res.json();
       const eventsArray = Array.isArray(data) ? data : data.events || data.data || [];
       nb.categoriesEvents = [...new Set(
@@ -68,7 +68,7 @@
   async function fetchUser() {
     if (!nb.token) return;
     try {
-      const res = await fetch("http://localhost:5000/api/auth/perfil", {
+      const res = await fetch("https://backend-tradicions.onrender.com/api/auth/perfil", {
         method: "POST",
         headers: { Authorization: `Bearer ${nb.token}` },
       });

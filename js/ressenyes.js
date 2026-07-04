@@ -97,7 +97,7 @@ function buildResenyesCard(publicacioId) {
   /* ── Fetch inicial ── */
   (async () => {
     try {
-      const res = await fetch(`http://localhost:5000/resenas/${publicacioId}`);
+      const res = await fetch(`https://backend-tradicions.onrender.com/resenas/${publicacioId}`);
       if (res.ok) {
         const data = await res.json();
         ressenyes = Array.isArray(data) ? data : data.ressenyes ?? [];
@@ -280,7 +280,7 @@ function buildResenyesCard(publicacioId) {
       submitBtn.disabled = true;
 
       try {
-        const res = await fetch(`http://localhost:5000/resenas/${publicacioId}`, {
+        const res = await fetch(`https://backend-tradicions.onrender.com/resenas/${publicacioId}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

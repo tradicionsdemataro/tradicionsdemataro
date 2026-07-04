@@ -183,7 +183,7 @@ function wireForm() {
     const motivacio = fields.motivacio.value.trim();
 
     try {
-      const res = await fetch("http://localhost:5000/solicituds", {
+      const res = await fetch("https://backend-tradicions.onrender.com/solicituds", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

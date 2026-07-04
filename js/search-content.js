@@ -305,9 +305,9 @@ function renderSearchContent(container, onCloseCallback) {
     updateResults();
     try {
       const [eventsRes, pubRes, projRes] = await Promise.all([
-        fetch("http://localhost:5000/events"),
-        fetch("http://localhost:5000/publi"),
-        fetch("http://localhost:5000/projectes"),
+        fetch("https://backend-tradicions.onrender.com/events"),
+        fetch("https://backend-tradicions.onrender.com/publi"),
+        fetch("https://backend-tradicions.onrender.com/projectes"),
       ]);
       const eventsData = await eventsRes.json();
       const pubData = await pubRes.json();

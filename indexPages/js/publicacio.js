@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchRessenyes() {
   try {
-    const res = await fetch(`http://localhost:5000/resenas/${id}`);
+    const res = await fetch(`https://backend-tradicions.onrender.com/resenas/${id}`);
     if (!res.ok) { state.ressenyes = []; return; }
     const data = await res.json();
     const lista = data?.reseñas ?? data?.ressenyes ?? data ?? [];
@@ -48,12 +48,12 @@ async function fetchRessenyes() {
 
 async function fetchPublicacio() {
   try {
-    let res = await fetch(`http://localhost:5000/publi/${id}`);
+    let res = await fetch(`https://backend-tradicions.onrender.com/publi/${id}`);
     if (res.ok) {
       const data = await res.json();
       state.pub = data.publicacio ?? data;
     } else {
-      res = await fetch("http://localhost:5000/publi");
+      res = await fetch("https://backend-tradicions.onrender.com/publi");
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       const all = Array.isArray(data) ? data : data.publicacions ?? [];
@@ -77,7 +77,7 @@ async function handleEnviar() {
   render();
 
   try {
-    const res = await fetch(`http://localhost:5000/resenas/${id}`, {
+    const res = await fetch(`https://backend-tradicions.onrender.com/resenas/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

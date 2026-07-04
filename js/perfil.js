@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     state.loading = true;
     render();
     try {
-      const res = await fetch("http://localhost:5000/api/auth/perfil", {
+      const res = await fetch("https://backend-tradicions.onrender.com/api/auth/perfil", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     state.feedback = null;
     render();
     try {
-      const res = await fetch("http://localhost:5000/api/auth/perfil", {
+      const res = await fetch("https://backend-tradicions.onrender.com/api/auth/perfil", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fd.append("field", field);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/upload", {
+      const res = await fetch("https://backend-tradicions.onrender.com/api/auth/upload", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: fd,
