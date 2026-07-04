@@ -7,9 +7,9 @@
 (function () {
   const DEFAULT_AVATAR = "/images/default.jpg";
   const SEARCH_ICON = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search.png";
-  const SEARCH_CLOSE_ICON = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search-close.png";
+  const SEARCH_CLOSE_ICON = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/searchclose.png";
   const SEARCH_ICON_MOBILE = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search.png";
-  const SEARCH_CLOSE_ICON_MOBILE = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search-close.png";
+  const SEARCH_CLOSE_ICON_MOBILE = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/searchclose.png";
 
   const root = document.getElementById("navbar");
   if (!root) return;
