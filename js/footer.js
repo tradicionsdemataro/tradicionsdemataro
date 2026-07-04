@@ -16,9 +16,9 @@ function renderFooter() {
         <span class="footer-index">TRADICIONS · DE MATARÓ</span>
 
         <div class="footer-logo-row">
-          <img src="images/logo-footer.png" alt="Tradicions de Mataró" class="footer-logo" />
+          <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/logo-footer.png" alt="Tradicions de Mataró" class="footer-logo" />
           <span class="footer-logo-divider" aria-hidden="true"></span>
-          <img src="images/cercavila_logo.svg" alt="Cercavila" class="footer-logo footer-logo-svg" />
+          <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/cercavila_logo.svg" alt="Cercavila" class="footer-logo footer-logo-svg" />
         </div>
 
         <h2 class="footer-headline">
