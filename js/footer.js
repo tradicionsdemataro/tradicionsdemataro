@@ -26,7 +26,7 @@ function renderFooter() {
           creant <span class="accent-blue">futur</span>.
         </h2>
 
-        <a href="/contacte" class="footer-btn">
+        <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/contacte.html" class="footer-btn">
           Contacta amb nosaltres
         </a>
       </div>
@@ -53,11 +53,11 @@ function renderFooter() {
       <div class="footer-col">
         <h3 class="footer-col-title">Navegació</h3>
         <ul class="footer-list">
-          <li><a href="/home">Inici</a></li>
-          <li><a href="/contacte">Contacte</a></li>
-          <li><a href="/politica/privacitat">Política de privacitat</a></li>
-          <li><a href="/politica/xarxes">Política de xarxes</a></li>
-          <li><a href="/politica/avisLegal">Avìs legal</a></li>
+          <li><a href="https://tradicionsdemataro.github.io/tradicionsdemataro/">Inici</a></li>
+          <li><a href="https://tradicionsdemataro.github.io/tradicionsdemataro/contacte.html">Contacte</a></li>
+          <li><a href="https://tradicionsdemataro.github.io/tradicionsdemataro/priv.html">Política de privacitat</a></li>
+          <li><a href="https://tradicionsdemataro.github.io/tradicionsdemataro/xarxes.html">Política de xarxes</a></li>
+          <li><a href="https://tradicionsdemataro.github.io/tradicionsdemataro/avis.html">Avìs legal</a></li>
         </ul>
       </div>
 
