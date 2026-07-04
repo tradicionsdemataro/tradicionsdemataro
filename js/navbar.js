@@ -6,6 +6,11 @@
 
 (function () {
   const DEFAULT_AVATAR = "/images/default.jpg";
+  const SEARCH_ICON = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search.png";
+  const SEARCH_CLOSE_ICON = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search-close.png";
+  const SEARCH_ICON_MOBILE = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search.png";
+  const SEARCH_CLOSE_ICON_MOBILE = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search-close.png";
+
   const root = document.getElementById("navbar");
   if (!root) return;
 
@@ -17,6 +22,7 @@
     categoriesPubli: [],
     categoriesEvents: [],
     user: null,
+    isSearchOpen: false,
   };
 
   // ── Fetchs (idèntics als useEffect del component React) ────────────
@@ -181,8 +187,8 @@
     const desktopMenu = !nb.isMobile ? `
       <ul class="nav-options desktop-only">
         <div class="search-container">
-          <button type="button" class="search-toggle" data-action="open-search">
-            <img src="https://tradicionsdemataro.github.io/tradicionsdemataro/images/search.png" alt="Buscar" />
+          <button type="button" class="search-toggle" data-action="toggle-search">
+            <img src="${nb.isSearchOpen ? SEARCH_CLOSE_ICON : SEARCH_ICON}" alt="Buscar" />
           </button>
         </div>
 
@@ -219,8 +225,8 @@
       <div class="mobile-menu open">
         <button class="close-menu" data-action="close-menu">✕</button>
 
-        <button type="button" class="search-toggle mobile-search-toggle" data-action="open-search-mobile">
-          <img src="/images/search.png" alt="Buscar" />
+        <button type="button" class="search-toggle mobile-search-toggle" data-action="toggle-search-mobile">
+          <img src="${nb.isSearchOpen ? SEARCH_CLOSE_ICON_MOBILE : SEARCH_ICON_MOBILE}" alt="Buscar" />
         </button>
 
         <div class="yellow-container">${logoStrip()}</div>
@@ -282,13 +288,21 @@
       nb.menuOpen = false;
       render();
     });
-    root.querySelector('[data-action="open-search"]')?.addEventListener("click", () => {
-      window.openSearchOverlay?.();
+    root.querySelector('[data-action="toggle-search"]')?.addEventListener("click", () => {
+      if (nb.isSearchOpen) {
+        window.closeSearchOverlay?.();
+      } else {
+        window.openSearchOverlay?.();
+      }
     });
-    root.querySelector('[data-action="open-search-mobile"]')?.addEventListener("click", () => {
-      nb.menuOpen = false;
-      render();
-      window.openSearchOverlay?.();
+    root.querySelector('[data-action="toggle-search-mobile"]')?.addEventListener("click", () => {
+      if (nb.isSearchOpen) {
+        window.closeSearchOverlay?.();
+      } else {
+        nb.menuOpen = false;
+        render();
+        window.openSearchOverlay?.();
+      }
     });
     root.querySelector('[data-action="logout"]')?.addEventListener("click", (e) => {
       e.preventDefault();
@@ -296,6 +310,12 @@
       window.location.href = "/";
     });
   }
+
+  // ── Sincronitza la icona amb l'estat real de l'overlay ──────────────
+  window.addEventListener("search-overlay-toggle", (e) => {
+    nb.isSearchOpen = !!e.detail?.open;
+    render();
+  });
 
   // ── Resize listener (equivalent a l'useEffect amb 'resize') ────────
   window.addEventListener("resize", () => {
