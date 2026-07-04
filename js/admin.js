@@ -50,7 +50,6 @@ async function checkAdminAuth() {
     });
 
     console.log("STATUS:", res.status);
-https://tradicionsdemataro.github.io/tradicionsdemataro/
     const text = await res.text();
     console.log("RESPUESTA:", text);
 
