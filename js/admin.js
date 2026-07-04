@@ -34,14 +34,43 @@ document.addEventListener("DOMContentLoaded", () => {
 // ── Auth (equivalent a useAdminAuth) ────────────────────────────────
 async function checkAdminAuth() {
   const token = getAdminToken();
-  if (!token) return null;
+
+  if (!token) {
+    console.warn("No se ha encontrado ningún token.");
+    return null;
+  }
+
   try {
-    const res = await fetch(`${API}api/auth/me`, { headers: { Authorization: `Bearer ${token}` } });
-    if (!res.ok) return null;
+    const res = await fetch(`${API}api/auth/me`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!res.ok) {
+      console.error("Error de autenticación:", res.status, res.statusText);
+      return null;
+    }
+
     const data = await res.json();
-    const u = data.user ?? data;
-    return (u.rol === "admin" || u.role === "admin") ? u : null;
-  } catch {
+    const user = data.user ?? data;
+
+    if (!user) {
+      console.error("La API no ha devuelto un usuario válido.");
+      return null;
+    }
+
+    if (user.rol === "admin" || user.role === "admin") {
+      return user;
+    }
+
+    console.warn("El usuario no tiene permisos de administrador.");
+    return null;
+
+  } catch (err) {
+    console.error("Error al comprobar la autenticación:", err);
     return null;
   }
 }
