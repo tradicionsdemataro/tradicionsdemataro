@@ -308,7 +308,7 @@
     root.querySelector('[data-action="logout"]')?.addEventListener("click", (e) => {
       e.preventDefault();
       localStorage.removeItem("token");
-      window.location.href = "/";
+      window.location.href = "https://tradicionsdemataro.github.io/tradicionsdemataro/";
     });
   }
 

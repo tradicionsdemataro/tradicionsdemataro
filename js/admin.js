@@ -36,7 +36,7 @@ async function checkAdminAuth() {
   const token = getAdminToken();
   if (!token) return null;
   try {
-    const res = await fetch(`${API}api/auth/me`, { headers: { Authorization: `Bearer ${token}` } });
+    const res = await fetch(`${API}/api/auth/me`, { headers: { Authorization: `Bearer ${token}` } });
     if (!res.ok) return null;
     const data = await res.json();
     const u = data.user ?? data;

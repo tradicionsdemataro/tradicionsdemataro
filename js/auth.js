@@ -141,7 +141,7 @@ function wireLoginForm() {
 
       saveToLocalStorage(data);
       showSuccess("login");
-      window.location.href = "/home";
+      window.location.href = "https://tradicionsdemataro.github.io/tradicionsdemataro/";
     } catch (err) {
       showError("login", err.message);
     } finally {
@@ -196,7 +196,7 @@ function wireRegisterForm() {
 
       saveToLocalStorage(data);
       showSuccess("register");
-      window.location.href = "/home";
+      window.location.href = "https://tradicionsdemataro.github.io/tradicionsdemataro/";
     } catch (err) {
       showError("register", err.message);
     } finally {
