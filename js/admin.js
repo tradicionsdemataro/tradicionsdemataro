@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   checkAdminAuth().then(user => {
     if (!user) {
-      window.location.href = "/";
+      window.location.href = "https://tradicionsdemataro.github.io/tradicionsdemataro/";
       return;
     }
     renderApp(root, user);
