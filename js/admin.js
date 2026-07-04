@@ -50,7 +50,7 @@ async function checkAdminAuth() {
     });
 
     console.log("STATUS:", res.status);
-
+https://tradicionsdemataro.github.io/tradicionsdemataro/
     const text = await res.text();
     console.log("RESPUESTA:", text);
 
@@ -109,7 +109,7 @@ function renderApp(root, user) {
                 <div class="adm-side__urole"><i class="ti ti-shield-check"></i>Administrador/a</div>
               </div>
             </div>
-            <a href="/" target="_blank" rel="noopener noreferrer" class="adm-side__view-web">
+            <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/" target="_blank" rel="noopener noreferrer" class="adm-side__view-web">
               <i class="ti ti-world"></i>Veure web<i class="ti ti-arrow-up-right"></i>
             </a>
           </div>
@@ -126,7 +126,7 @@ function renderApp(root, user) {
               <span class="adm-topbar__bc-current"><i class="ti ${currentSection?.icon}"></i>${currentSection?.label}</span>
             </nav>
             <div class="adm-topbar__right">
-              <a href="/" target="_blank" rel="noopener noreferrer" class="adm-topbar__site">
+              <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/" target="_blank" rel="noopener noreferrer" class="adm-topbar__site">
                 <i class="ti ti-external-link"></i><span>Veure web</span>
               </a>
             </div>
