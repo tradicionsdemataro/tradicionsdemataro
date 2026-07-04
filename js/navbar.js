@@ -5,7 +5,7 @@
 // ============================================================
 
 (function () {
-  const DEFAULT_AVATAR = "/images/default.jpg";
+  const DEFAULT_AVATAR = "https://tradicionsdemataro.github.io/tradicionsdemataro//images/default.jpg";
   const SEARCH_ICON = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search.png";
   const SEARCH_CLOSE_ICON = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/searchclose.png";
   const SEARCH_ICON_MOBILE = "https://tradicionsdemataro.github.io/tradicionsdemataro/images/search.png";
