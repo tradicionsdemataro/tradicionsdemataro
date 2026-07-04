@@ -88,33 +88,33 @@
 
   function paginesDropdown() {
     return `
-      <a href="/home">HOME</a>
-      <a href="/qui-som">QUI SOM</a>
-      <a href="/mapa">MAPA D'EVENTS</a>
-      <a href="/agenda">AGENDA</a>
-      <a href="/identitat">IDENTITAT CORPORETIVA</a>
-      <a href="/credits">CRÈDITS I SUBJECTE</a>
-      <a href="/links">LINKS D'INTERÈS</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/">HOME</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/quisom.html">QUI SOM</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/mapa.html">MAPA D'EVENTS</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/agenda.html">AGENDA</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/identitat.html">IDENTITAT CORPORETIVA</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/avis.html">CRÈDITS I SUBJECTE</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/links.html">LINKS D'INTERÈS</a>
     `;
   }
 
   function equipDropdown() {
     return `
-      <a href="/equip">EQUIP</a>
-      <a href="/uneixte">UNEIXTE</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/equip.html">EQUIP</a>
+      <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/uneixte.html">UNEIXTE</a>
     `;
   }
 
   function projectesDropdown() {
-    return `<a href="/projectes">TOTS</a>${dropdownLinks(nb.categorias, "/projectes")}`;
+    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/projectes.html">TOTS</a>${dropdownLinks(nb.categorias, "/projectes")}`;
   }
 
   function publicacionsDropdown() {
-    return `<a href="/publicacions">TOTES</a>${dropdownLinks(nb.categoriesPubli, "/publicacions")}`;
+    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/publicacions.html">TOTES</a>${dropdownLinks(nb.categoriesPubli, "/publicacions")}`;
   }
 
   function eventsDropdown() {
-    return `<a href="/events">TOTS</a>${dropdownLinks(nb.categoriesEvents, "/events")}`;
+    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/events.html">TOTS</a>${dropdownLinks(nb.categoriesEvents, "/events")}`;
   }
 
   function socialsDropdown() {
@@ -154,7 +154,7 @@
 
   function authItem() {
     if (!nb.token) {
-      return `<li><a href="/login">LOGIN</a></li>`;
+      return `<li><a href="https://tradicionsdemataro.github.io/tradicionsdemataro/auth.html">LOGIN</a></li>`;
     }
     return `
       <li class="dropdown profile-dropdown">
@@ -162,7 +162,7 @@
           <img src="${nb.user?.avatar || DEFAULT_AVATAR}" alt="Perfil" class="navbar-avatar" />
         </button>
         <div class="dropdown-content profile-menu">
-          <a href="/perfil"><i class="ti ti-user"></i> Perfil</a>
+          <a href="https://tradicionsdemataro.github.io/tradicionsdemataro/perfil.html"><i class="ti ti-user"></i> Perfil</a>
           <a href="#" class="logout-dropdown-btn" data-action="logout"><i class="ti ti-logout"></i> Tancar sessió</a>
         </div>
       </li>
@@ -209,7 +209,7 @@
           <button class="dropbtn">EVENTS ▾</button>
           <div class="dropdown-content">${eventsDropdown()}</div>
         </li>
-        <li><a href="/contacte">CONTACTE</a></li>
+        <li><a href="https://tradicionsdemataro.github.io/tradicionsdemataro/contacte.html">CONTACTE</a></li>
         <li class="dropdown">
           <button class="dropbtn">SOCIALS ▾</button>
           ${socialsDropdown()}
@@ -253,7 +253,7 @@
             <button class="dropbtn">SOCIALS ▾</button>
             ${socialsDropdown()}
           </li>
-          <li><a href="/login">LOGIN</a></li>
+          <li><a href="https://tradicionsdemataro.github.io/tradicionsdemataro/login.html">LOGIN</a></li>
         </ul>
       </div>
     ` : "";
