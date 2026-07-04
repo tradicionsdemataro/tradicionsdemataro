@@ -25,7 +25,6 @@
     isSearchOpen: false,
   };
 
-  // ── Fetchs (idèntics als useEffect del component React) ────────────
   async function fetchCategorias() {
     try {
       const res = await fetch("http://localhost:5000/projectes");
@@ -81,7 +80,6 @@
     }
   }
 
-  // ── Helpers de markup reutilitzats en desktop i mobile ──────────────
   function dropdownLinks(categories, basePath) {
     return categories.map(categoria => `
       <a href="${basePath}?categoria=${encodeURIComponent(categoria)}">${categoria}</a>
@@ -182,7 +180,6 @@
     `;
   }
 
-  // ── Render principal ─────────────────────────────────────────────
   function render() {
     const desktopMenu = !nb.isMobile ? `
       <ul class="nav-options desktop-only">
@@ -289,19 +286,24 @@
       render();
     });
     root.querySelector('[data-action="toggle-search"]')?.addEventListener("click", () => {
+      // Toggle optimista: la icona canvia a l'instant, no espera l'event de l'overlay
+      nb.isSearchOpen = !nb.isSearchOpen;
+      render();
       if (nb.isSearchOpen) {
-        window.closeSearchOverlay?.();
-      } else {
         window.openSearchOverlay?.();
+      } else {
+        window.closeSearchOverlay?.();
       }
     });
     root.querySelector('[data-action="toggle-search-mobile"]')?.addEventListener("click", () => {
+      nb.isSearchOpen = !nb.isSearchOpen;
       if (nb.isSearchOpen) {
-        window.closeSearchOverlay?.();
-      } else {
         nb.menuOpen = false;
         render();
         window.openSearchOverlay?.();
+      } else {
+        render();
+        window.closeSearchOverlay?.();
       }
     });
     root.querySelector('[data-action="logout"]')?.addEventListener("click", (e) => {
@@ -311,20 +313,23 @@
     });
   }
 
-  // ── Sincronitza la icona amb l'estat real de l'overlay ──────────────
+  // Font de veritat: sincronitza la icona quan l'overlay es tanca
+  // per altres vies (Esc, backdrop, botó ✕ intern) que el toggle
+  // optimista de dalt no cobreix.
   window.addEventListener("search-overlay-toggle", (e) => {
-    nb.isSearchOpen = !!e.detail?.open;
-    render();
+    const open = !!e.detail?.open;
+    if (nb.isSearchOpen !== open) {
+      nb.isSearchOpen = open;
+      render();
+    }
   });
 
-  // ── Resize listener (equivalent a l'useEffect amb 'resize') ────────
   window.addEventListener("resize", () => {
     const wasMobile = nb.isMobile;
     nb.isMobile = window.innerWidth < 850;
     if (wasMobile !== nb.isMobile) render();
   });
 
-  // ── Init ─────────────────────────────────────────────────────────
   render();
   fetchUser();
   fetchCategoriesPubli();
