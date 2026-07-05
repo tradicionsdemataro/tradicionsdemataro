@@ -39,9 +39,6 @@ function renderFooter() {
             <a href="mailto:info@tradicionsdemataro.cat">info@tradicionsdemataro.cat</a>
           </li>
           <li>
-            <a href="tel:+34600000000">+34 600 000 000</a>
-          </li>
-          <li>
             <a href="Horari: Atencio">Dilluns a Divendres: 10:00 – 14:00 i de 16:00  - 20:30</a>
           </li>
           <li>

@@ -244,9 +244,9 @@ function renderGrid() {
       </div>
     `;
 
-    card.querySelector(".proj-card-btn").addEventListener("click", () => {
-      window.location.href = `projecte.html?id=${p.id}`;
-    });
+  card.querySelector(".proj-card-btn").addEventListener("click", () => {
+    window.location.href = `https://tradicionsdemataro.github.io/tradicionsdemataro/indexPages/projecte.html?id=${p.id}`;
+  });
 
     grid.appendChild(card);
   });

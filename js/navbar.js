@@ -106,17 +106,16 @@
   }
 
   function projectesDropdown() {
-    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/projectes.html">TOTS</a>${dropdownLinks(nb.categorias, "/projectes")}`;
+    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/projectes.html">TOTS</a>${dropdownLinks(nb.categorias, "https://tradicionsdemataro.github.io/tradicionsdemataro/projectes.html")}`;
   }
 
   function publicacionsDropdown() {
-    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/publicacions.html">TOTES</a>${dropdownLinks(nb.categoriesPubli, "/publicacions")}`;
+    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/publicacions.html">TOTES</a>${dropdownLinks(nb.categoriesPubli, "https://tradicionsdemataro.github.io/tradicionsdemataro/publicacions.html")}`;
   }
 
   function eventsDropdown() {
-    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/events.html">TOTS</a>${dropdownLinks(nb.categoriesEvents, "/events")}`;
+    return `<a href="https://tradicionsdemataro.github.io/tradicionsdemataro/events.html">TOTS</a>${dropdownLinks(nb.categoriesEvents, "https://tradicionsdemataro.github.io/tradicionsdemataro/events.html")}`;
   }
-
   function socialsDropdown() {
     return `
       <div class="dropdown-content socials-dropdown">

@@ -246,8 +246,8 @@ function renderGrid() {
     `;
 
     card.querySelector(".pub-card-btn").addEventListener("click", () => {
-      window.location.href = `publicacio.html?id=${p.id}`;
-    });
+    window.location.href = `https://tradicionsdemataro.github.io/tradicionsdemataro/indexPages/publicacio.html?id=${p.id}`;
+  });
 
     // ── Ressenyes (component independent per targeta) ──
     card.appendChild(buildResenyesCard(p._id ?? p.id ?? idx));
