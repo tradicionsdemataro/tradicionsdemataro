@@ -114,7 +114,7 @@
   background: var(--bg-alt);
   border-bottom: 1px solid var(--line);
   position: sticky;
-  top: 88px;
+  top: 60px;
   z-index: 100;
 }
 
