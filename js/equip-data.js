@@ -4,7 +4,7 @@
 const membres = [
   { nom: "Carles Rigat", email: "carlesrigat@gmail.com", carrec: "Director" },
   { nom: "Carla Baños", email: "carlabanosna@gmail.com", carrec: "Directora" },
-  { nom: "Carol García", email: "carollunagarcia@gmail.com", carrec: "Redacció" },
+  { nom: "Carol García", email: "carollunagarcia@gmail.com", carrec: "Col·laboradora" },
   { nom: "Patrin Domenech", email: "patdollo@hotmail.com", carrec: "Directora" },
   { nom: "Javi Jurado", email: "jaba000@hotmail.com", carrec: "Fotografia" },
   { nom: "Toni Guirao", email: "tnguirao@gmail.com", carrec: "Director" },
