@@ -129,7 +129,7 @@ const galleryItems = [
 
 const galleryStrip = [
   { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/gegants-cercavila.jpg", label: "Sant Jordi a l'esplenada" },
-  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes2.jpg",        label: "Sardanes" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes2.jpg",        label: "En Robafaves a les Santes" },
   { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/mort.jpg",              label: "Despulles d'en Pellofa" },
   { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carnaval2.jpg",         label: "Rua de Carnaval" },
   { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes3.jpg",        label: "Gralla" },
@@ -172,11 +172,11 @@ const videoSideItems = [
 ];
 
 const videoReels = [
-  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/cercavila2.jpg",        label: "Cercavila nocturna",  duration: "0:58" },
-  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carnaval2.jpg",         label: "Foc i música",        duration: "1:12" },
-  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/gegants-cercavila.jpg", label: "Gegants infantils",   duration: "0:44" },
-  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes3.jpg",        label: "Sardana a la plaça",  duration: "1:05" },
-  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/mort.jpg",              label: "Tarda de carnaval",   duration: "0:37" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/cercavila2.jpg",        label: "Pla d'en Boet",  duration: "0:58" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carnaval2.jpg",         label: "Carnaval",        duration: "1:12" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/gegants-cercavila.jpg", label: "Sant Jordi a l'esplenada",   duration: "0:44" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes3.jpg",        label: "En Rovafabes a Les Santes",  duration: "1:05" },
+  { thumb: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/mort.jpg",              label: "Despulles d'en Pellofa",   duration: "0:37" },
 ];
 
 const PUBLI_PER_PAGE = 4;

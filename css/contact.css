@@ -65,6 +65,74 @@
   white-space: nowrap;
 }
 
+/* =================================================
+   QUICK INFO GRID
+================================================= */
+.contacte-quick {
+  padding: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.quick-grid {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+
+.quick-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 56px 40px;
+  background: var(--bg);
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.4s ease, transform 0.4s cubic-bezier(.2,.8,.2,1);
+}
+
+a.quick-card:hover {
+  background: var(--bg-elevated);
+  transform: translateY(-6px);
+}
+
+.quick-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,210,90,0.35);
+  color: var(--yellow);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.quick-icon-blue { border-color: rgba(90,166,255,0.35); color: var(--blue); }
+.quick-icon-pink { border-color: rgba(255,127,192,0.35); color: var(--pink); }
+.quick-icon-orange { border-color: rgba(255,90,46,0.35); color: var(--orange); }
+
+.quick-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 18px;
+}
+
+.quick-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.4;
+}
 
 /* =================================================
    DEPARTAMENTS — contactes per àrea
@@ -179,95 +247,6 @@
   color: var(--blue);
 }
 
-/* ── Responsive ── */
-@media (max-width: 1100px) {
-  .departaments-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
-  .contacte-departaments {
-    padding: 90px 6% 0;
-  }
-
-  .departaments-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dept-card {
-    padding: 32px 24px;
-  }
-}
-/* =================================================
-   QUICK INFO GRID
-================================================= */
-.contacte-quick {
-  padding: 0;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
-}
-
-.quick-grid {
-  max-width: 1500px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--line);
-}
-
-.quick-card {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding: 56px 40px;
-  background: var(--bg);
-  text-decoration: none;
-  color: var(--text);
-  transition: background 0.4s ease, transform 0.4s cubic-bezier(.2,.8,.2,1);
-}
-
-a.quick-card:hover {
-  background: var(--bg-elevated);
-  transform: translateY(-6px);
-}
-
-.quick-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,210,90,0.35);
-  color: var(--yellow);
-  font-family: var(--font-mono);
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.quick-icon-blue { border-color: rgba(90,166,255,0.35); color: var(--blue); }
-.quick-icon-pink { border-color: rgba(255,127,192,0.35); color: var(--pink); }
-.quick-icon-orange { border-color: rgba(255,90,46,0.35); color: var(--orange); }
-
-.quick-label {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-top: 18px;
-}
-
-.quick-value {
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  line-height: 1.4;
-}
-
 /* =================================================
    FORM + MAP — main section
 ================================================= */
@@ -356,13 +335,13 @@ a.quick-card:hover {
   min-height: 120px;
 }
 
-
 .form-error {
   color: #ff4d4f;
   font-size: 0.85rem;
   margin-top: 4px;
   display: block;
 }
+
 /* =================================================
    SUBMIT + FEEDBACK
 ================================================= */
@@ -475,6 +454,16 @@ a.quick-card:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Amb 3 targetes en 2 columnes, la 3a queda sola i deixa
+     un espai buit al costat. La fem ocupar tot l'ample. */
+  .quick-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .departaments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .contacte-main {
     grid-template-columns: 1fr;
     gap: 60px;
@@ -499,8 +488,24 @@ a.quick-card:hover {
     grid-template-columns: 1fr;
   }
 
+  .quick-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
   .quick-card {
     padding: 40px 28px;
+  }
+
+  .contacte-departaments {
+    padding: 90px 6% 0;
+  }
+
+  .departaments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dept-card {
+    padding: 32px 24px;
   }
 
   .contacte-main {
