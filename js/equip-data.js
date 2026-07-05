@@ -20,7 +20,6 @@ const juntaDirectiva = {
   equip: [
     "Carles Rigat",
     "Carla Baños",
-    "Carol García",
     "Patrin Domenech",
     "Javi Jurado",
     "Toni Guirao",
@@ -47,7 +46,6 @@ const juntaDirectiva = {
   responsables: {
     "Coordinació dels Concursos": [
       "Carles Rigat",
-      "Carol García",
       "Carla Baños"
     ],
 

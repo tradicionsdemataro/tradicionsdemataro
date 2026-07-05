@@ -20,8 +20,25 @@ const ROLE_CATEGORIES = [
 ];
 
 function getRoleClass(carrec) {
-  const match = ROLE_CATEGORIES.find((r) => r.test.test(carrec));
-  return match ? match.key : "role-redaccio"; // redacció/comunicació = per defecte
+  const text = carrec.toLowerCase();
+
+  if (text.includes("fotografia") || text.includes("audiovisual")) {
+    return "role-visual";
+  }
+
+  if (text.includes("director")) {
+    return "role-direccio";
+  }
+
+  if (text.includes("desenvolupador")) {
+    return "role-tecnic";
+  }
+
+  if (text.includes("col·laborador")) {
+    return "role-colaboracio";
+  }
+
+  return "role-redaccio";
 }
 
 function findMembre(nom) {
