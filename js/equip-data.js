@@ -11,7 +11,7 @@ const membres = [
   { nom: "Susana Roca", email: "srocaf@gmail.com", carrec: "Redacció" },
   { nom: "Óscar Ruiz", email: "oscar.rgall258@gmail.com", carrec: "Col·laborador" },
   { nom: "Elisenda Roig", email: "roignomse@gmail.com", carrec: "Directora" },
-  { nom: "Aina Yue", email: "", carrec: "Directora" },
+  { nom: "Aina Yue", email: "ainayuec@gmail.com", carrec: "Directora" },
   { nom: "Julio López", email: "juliomataro58@gmail.com", carrec: "Director · Redacció · Fotografia" },
   { nom: "Aniol Rodríguez", email: "aniolrodriguez@gmail.com", carrec: "Desenvolupador de la web" },
 ];
