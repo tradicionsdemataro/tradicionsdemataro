@@ -34,8 +34,14 @@ function renderFooter() {
       <div class="footer-col">
         <h3 class="footer-col-title">Contacte</h3>
         <ul class="footer-list">
-          <li>Ronda O'Donnell, 08302 Mataró</li>
-          <li>
+            <li>
+              <a href="https://google.com/maps?client=firefox-b-d&hs=z3r&sca_esv=a78620cd9f0e6757&sxsrf=APpeQntAU5ON_Zfe5H2OtT_wv3f9JBQbyw:1783284645173&kgmid=/g/11lmc9jvpc&shem=epsd1,ltae,rimspwouoe&shndl=30&kgs=828fd4059f37dcf1&um=1&ie=UTF-8&fb=1&gl=es&sa=X&geocode=KVUBiVTDtaQSMbaX2OtT_wv3f9JBQbyw:1783284645173&daddr=Ronda+O%27Donell,+08302+Mataró,+Barcelona"
+                target="_blank"
+                rel="noopener noreferrer">
+                Ronda O'Donnell, 08302 Mataró
+              </a>
+            </li>          
+            <li>
             <a href="mailto:redacciotradicionsmataro@gmail.com">redacciotradicionsmataro@gmail.com</a>
           </li>
           <li>
