@@ -194,7 +194,57 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
+/* ==========================================
+   MEMBER CARD — variants per categoria de rol
+   (la mateixa informació que el text, en color)
+========================================== */
 
+.member-card {
+  border-top: 3px solid rgba(255, 255, 255, .12);
+}
+
+.member-card.role-direccio    { border-top-color: var(--yellow); }
+.member-card.role-tecnic      { border-top-color: var(--orange); }
+.member-card.role-visual      { border-top-color: #5EC8C0; }
+.member-card.role-colaboracio { border-top-color: #E38A9C; }
+.member-card.role-redaccio    { border-top-color: rgba(255, 255, 255, .25); }
+
+.member-role.role-direccio {
+  background: rgba(255, 215, 0, .12);
+  color: var(--yellow);
+  border: 1px solid rgba(255, 215, 0, .25);
+}
+
+.member-role.role-tecnic {
+  background: rgba(255, 140, 60, .12);
+  color: var(--orange);
+  border: 1px solid rgba(255, 140, 60, .25);
+}
+
+.member-role.role-visual {
+  background: rgba(94, 200, 192, .12);
+  color: #5EC8C0;
+  border: 1px solid rgba(94, 200, 192, .25);
+}
+
+.member-role.role-colaboracio {
+  background: rgba(227, 138, 156, .12);
+  color: #E38A9C;
+  border: 1px solid rgba(227, 138, 156, .25);
+}
+
+.member-role.role-redaccio {
+  background: rgba(255, 255, 255, .06);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, .12);
+}
+
+.member-no-email {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: .9rem;
+  opacity: .7;
+}
 .member-card {
   padding: 35px;
   border-radius: 22px;
