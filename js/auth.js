@@ -3,6 +3,12 @@
 // validació bàsica i crides a l'API amb desat a localStorage.
 
 document.addEventListener("DOMContentLoaded", () => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    window.location.href = "https://tradicionsdemataro.github.io/tradicionsdemataro/";
+    return;
+  }
   buildBrandGrid();
   wireTabs();
   wireLoginForm();
