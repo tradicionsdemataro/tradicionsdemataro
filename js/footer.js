@@ -36,7 +36,7 @@ function renderFooter() {
         <ul class="footer-list">
           <li>Ronda O'Donnell, 08302 Mataró</li>
           <li>
-            <a href="mailto:info@tradicionsdemataro.cat">info@tradicionsdemataro.cat</a>
+            <a href="mailto:redacciotradicionsmataro@gmail.com">redacciotradicionsmataro@gmail.com</a>
           </li>
           <li>
             <a href="Horari: Atencio">Dilluns a Divendres: 10:00 – 14:00 i de 16:00  - 20:30</a>
