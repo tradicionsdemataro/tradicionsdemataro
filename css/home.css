@@ -2701,3 +2701,180 @@ body {
     font-size: 2.4rem;
   }
 }
+/* ==========================================
+   TESTIMONIS — slider editorial
+========================================== */
+
+.testimonis-section {
+  padding: 160px 6%;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--line);
+}
+
+.testimonis-header {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.testimonis-title {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin: 12px 0 16px;
+}
+
+.testimonis-title .accent-word {
+  color: var(--yellow);
+}
+
+.testimonis-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Wrap: flex amb les fletxes com a columnes fixes i el track ocupant la resta */
+.testimonis-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonis-track {
+  flex: 1 1 auto;
+  min-width: 0; /* imprescindible perquè un flex-item amb overflow no es desbordi */
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 4px;
+  scrollbar-width: none;
+  padding: 10px 4px 16px;
+
+  /* Fundit suau als extrems perquè el tall es vegi intencionat */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+}
+
+.testimonis-track::-webkit-scrollbar {
+  display: none;
+}
+
+.testimoni-card {
+  flex: 0 0 340px;
+  width: 340px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.testimoni-card:hover {
+  border-color: var(--yellow);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-6px);
+}
+
+.testimoni-quote-icon {
+  font-size: 1.6rem;
+  color: var(--yellow);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.testimoni-text {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text);
+  flex: 1;
+}
+
+.testimoni-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.testimoni-nom {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.testimoni-carrec {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Fletxes: columnes fixes del flex, mai flotant sobre les targetes */
+.testimonis-nav {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.testimonis-nav:hover:not(:disabled) {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: #1a1404;
+  transform: translateY(-3px);
+}
+
+.testimonis-nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .testimonis-section {
+    padding: 80px 6%;
+  }
+
+  .testimonis-slider-wrap {
+    gap: 10px;
+  }
+
+  .testimoni-card {
+    flex: 0 0 280px;
+    width: 280px;
+    padding: 28px;
+  }
+
+  .testimonis-nav {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+}

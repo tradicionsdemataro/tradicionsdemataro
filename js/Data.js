@@ -180,3 +180,24 @@ const videoReels = [
 ];
 
 const PUBLI_PER_PAGE = 4;
+
+const testimonisData = [
+  { text: "9 anys de Tradicions de Mataró. 9 anys de molt bona feina per donar a conèixer les tradicions de la nostra ciutat. Amb el desig que siguin per molts anys. Som-hi!", autor: "Xevi Ribas", carrec: "el Beatlero de Mataró" },
+  { text: "@tradicionsdemataro per a mi és cultura, és tradició, és ciutat, és germanor, és il·lusió i passió. És no perdre els costums ni les tradicions d'un poble. Enhorabona per l'aniversari i continua així, hem de mantenir vives les arrels de Mataró. Per molts anys!", autor: "Susana Roca" },
+  { text: "Que la cultura i la tradició siguin motor de cohesió i de vida a la ciutat.", autor: "Carla Aledo" },
+  { text: "Tradicions Mataró és fer gaudir la cultura a tothom! I, personalment, recordar-me qui soc, qui som, i com els meus han gaudit i fet seva la nostra cultura.", autor: "Mireia Safont" },
+  { text: "Gràcies per fer visibles les tradicions de la nostra preciosa ciutat. Necessitem fer perdurar la cultura de Mataró, i vosaltres ho feu possible. Gràcies pel vostre esforç.", autor: "Roser Tirado" },
+  { text: "Donant veu a la cultura i tradicions de Mataró, per molts anys més, aportant tant valor cultural i fent família. Gràcies de tot cor.", autor: "Mary Lechuga" },
+  { text: "@tradicionsdemataro, gràcies per difondre la cultura. Espero que porteu molts més anys promovent-la.", autor: "Sergi Riera" },
+  { text: "Tradicions Mataró és, per a mi, el lloc on es preserva la tradició de la Vila, tenint en compte que totes les tradicions són importants per igual.", autor: "Dani Viñallonga" },
+  { text: "Moltes gràcies per la feina que feu per donar a conèixer les tradicions, festes i gegants de Mataró. Seguiu així!", autor: "Pilar Planas" },
+  { text: "Tradicions de Mataró!!!! Moltes gràcies per la increïble labor d'informació i de reportatges sobre la nostra ciutat! Per molts més!", autor: "Boetukada" },
+  { text: "M'encanta que existeixi Tradicions de Mataró, un col·lectiu compromès en difondre les tradicions culturals de la nostra ciutat. Moltes felicitats, a seguir amb aquesta il·lusió i entusiasme!", autor: "Marta Parera" },
+  { text: "Moltes gràcies pel resum de l'exposició de @la_mundia_ és excel·lent! Us estem molt agraïts, enhorabona per la feina!", autor: "Àngels Jubany" },
+  { text: "En nom de La Múndia, moltes gràcies pel comentari de l'exposició d'en Romà Arranz. Molt ben fet, molt complet i entenedor. Gràcies!", autor: "Pere Fradera" },
+  { text: "Per mi el blog és un espai on poder gaudir de la cultura mataronina, conèixer-la i disfrutar-la.", autor: "Rut Soriano" },
+  { text: "Gràcies ❤️🎥 Gràcies de tot cor pel vídeo d'avui. No és fàcil transmetre tot el que estem vivint 💛.", autor: "afaescolamachado" },
+  { text: "Des de la @avrocafonda volem agrair la difusió de les nostres festes. Gràcies!!", autor: "Àngeles Escarandell" },
+  { text: "Tot un plaer haver participat en aquest directe. Esteu fent una gran tasca de donar a conèixer la cultura que tenim. Per molts anys més ❤️", autor: "liantlatrocadansa" },
+  { text: "¡Hombre! ¡Faltaría más! ¡Blogazo! ¡Blogazo! No se puede decir nada más. Gràcies per tenir-nos presents i per formar part també d'aquesta petita història digital de les tradicions de Mataró.", autor: "Pellofa Pirata Pirata XLVIII", carrec: "a home" },
+];

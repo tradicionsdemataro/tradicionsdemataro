@@ -549,6 +549,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetchPublicacions();
 
+// ================================================================
+  // TESTIMONIS — slider amb fletxes, teclat i estat robust
+  // ================================================================
+  function renderTestimonis() {
+    const track = document.querySelector(".testimonis-track");
+    if (!track) return;
+
+    if (!Array.isArray(testimonisData) || testimonisData.length === 0) {
+      track.innerHTML = `<p class="testimonis-empty">Encara no hi ha testimonis.</p>`;
+      return;
+    }
+
+    track.innerHTML = testimonisData.map((t) => `
+      <article class="testimoni-card">
+        <i class="ti ti-quote testimoni-quote-icon"></i>
+        <p class="testimoni-text">${t.text}</p>
+        <div class="testimoni-author">
+          <span class="testimoni-nom">${t.autor}</span>
+          ${t.carrec ? `<span class="testimoni-carrec">${t.carrec}</span>` : ""}
+        </div>
+      </article>
+    `).join("");
+  }
+
+  function wireTestimonisNav() {
+    const track = document.querySelector(".testimonis-track");
+    const prevBtn = document.querySelector(".testimonis-nav--prev");
+    const nextBtn = document.querySelector(".testimonis-nav--next");
+    if (!track || !prevBtn || !nextBtn) return;
+
+    function getStep() {
+      const card = track.querySelector(".testimoni-card");
+      if (!card) return track.clientWidth;
+      const gap = parseFloat(getComputedStyle(track).gap) || 20;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function scrollByCard(dir) {
+      track.scrollBy({ left: getStep() * dir, behavior: "smooth" });
+    }
+
+    function updateNavState() {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const atStart = track.scrollLeft <= 4;
+      const atEnd = track.scrollLeft >= maxScroll - 4;
+      prevBtn.disabled = atStart;
+      nextBtn.disabled = maxScroll <= 0 || atEnd;
+    }
+
+    prevBtn.addEventListener("click", () => scrollByCard(-1));
+    nextBtn.addEventListener("click", () => scrollByCard(1));
+
+    track.setAttribute("tabindex", "0");
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); scrollByCard(-1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); scrollByCard(1); }
+    });
+
+    track.addEventListener("scroll", updateNavState);
+    window.addEventListener("resize", updateNavState);
+    window.addEventListener("load", updateNavState);
+    updateNavState();
+  }
+
+  renderTestimonis();
+  wireTestimonisNav();
+
   // Mostrar el contenidor principal (equivalent a `showContent`)
   document.querySelector(".home-container")?.classList.add("show");
 });
