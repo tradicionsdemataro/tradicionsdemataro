@@ -120,7 +120,7 @@ const featuredTrobans = [
 
 const galleryItems = [
   { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/gegants-cercavila.jpg", label: "Sant Jordi a l'esplenada", year: "2024", className: "g1" },
-  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes2.jpg",        label: "Festa Major",        year: "2023", className: "g2" },
+  { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes2.jpg",        label: "En Robafaves a les Santes",        year: "2023", className: "g2" },
   { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/mort.jpg",              label: "Despulles d'en Pellofa",  year: "2022", className: "g3" },
   { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/carnaval2.jpg",         label: "Carnaval",           year: "2025", className: "g4" },
   { img: "https://tradicionsdemataro.github.io/tradicionsdemataro/images/rovafabes3.jpg",        label: "Carrers de Mataró",  year: "2021", className: "g5" },
