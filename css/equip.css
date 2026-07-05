@@ -181,7 +181,7 @@
 }
 
 /* ==========================================
-   EQUIP
+   EQUIP — grid base
 ========================================== */
 
 .equip-team {
@@ -194,13 +194,32 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
+
 /* ==========================================
    MEMBER CARD — variants per categoria de rol
    (la mateixa informació que el text, en color)
 ========================================== */
 
 .member-card {
+  padding: 35px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
   border-top: 3px solid rgba(255, 255, 255, .12);
+
+  background: rgba(255,255,255,.03);
+
+  transition: .35s;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.member-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--yellow);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.25);
 }
 
 .member-card.role-direccio    { border-top-color: var(--yellow); }
@@ -208,6 +227,23 @@
 .member-card.role-visual      { border-top-color: #5EC8C0; }
 .member-card.role-colaboracio { border-top-color: #E38A9C; }
 .member-card.role-redaccio    { border-top-color: rgba(255, 255, 255, .25); }
+
+.member-role {
+  display: inline-flex;
+  width: fit-content;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.08);
+
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  margin-bottom: 15px;
+}
 
 .member-role.role-direccio {
   background: rgba(255, 215, 0, .12);
@@ -239,33 +275,6 @@
   border: 1px solid rgba(255, 255, 255, .12);
 }
 
-.member-no-email {
-  color: var(--text-muted);
-  font-style: italic;
-  font-size: .9rem;
-  opacity: .7;
-}
-.member-card {
-  padding: 35px;
-  border-radius: 22px;
-  border: 1px solid var(--line);
-
-  background: rgba(255,255,255,.03);
-
-  transition: .35s;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.member-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--yellow);
-
-  box-shadow:
-    0 20px 40px rgba(0,0,0,.25);
-}
-
 .member-avatar {
   width: 70px;
   height: 70px;
@@ -290,23 +299,6 @@
   margin-bottom: 20px;
 }
 
-.member-role {
-  display: inline-flex;
-  width: fit-content;
-
-  padding: 6px 12px;
-
-  border-radius: 999px;
-
-  background: rgba(255,255,255,.08);
-
-  font-size: .75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-
-  margin-bottom: 15px;
-}
-
 .member-card h3 {
   font-size: 1.35rem;
   margin-bottom: 10px;
@@ -321,6 +313,139 @@
 }
 
 .member-card a:hover {
+  color: var(--yellow);
+}
+
+.member-no-email {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: .9rem;
+  opacity: .7;
+}
+
+/* ==========================================
+   DIRECCIÓ — grid destacada
+========================================== */
+
+.equip-directors {
+  padding-bottom: 100px;
+}
+
+.equip-grid--directors {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.member-card--director {
+  background: rgba(255, 215, 0, .04);
+}
+
+/* ==========================================
+   FILTRES: cerca + select
+========================================== */
+
+.equip-filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.equip-search-wrap {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .03);
+}
+
+.equip-search-wrap i {
+  color: var(--text-muted);
+}
+
+.equip-search-wrap input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: .95rem;
+  outline: none;
+}
+
+.equip-search-wrap input::placeholder {
+  color: var(--text-muted);
+}
+
+#equip-filter-select {
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .03);
+  color: var(--text);
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.equip-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 60px 0;
+}
+
+/* ==========================================
+   DEPARTAMENTS
+========================================== */
+
+.equip-departaments {
+  padding: 160px 6%;
+  background: var(--bg-warm);
+}
+
+.dept-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.dept-card-block {
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, .02);
+  transition: .3s;
+}
+
+.dept-card-block:hover {
+  transform: translateY(-6px);
+  border-color: var(--yellow);
+}
+
+.dept-card-block__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--yellow);
+  margin-bottom: 16px;
+}
+
+.dept-card-block__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dept-card-block__list a,
+.dept-card-block__list span {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: .95rem;
+  transition: .3s;
+}
+
+.dept-card-block__list a:hover {
   color: var(--yellow);
 }
 
@@ -417,12 +542,22 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .equip-grid--directors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dept-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 @media (max-width: 700px) {
 
   .areas-grid,
-  .equip-grid {
+  .equip-grid,
+  .equip-grid--directors,
+  .dept-list {
     grid-template-columns: 1fr;
   }
 
@@ -433,9 +568,14 @@
   .equip-intro,
   .equip-areas,
   .equip-team,
+  .equip-departaments,
   .equip-contact {
     padding-top: 120px;
     padding-bottom: 120px;
+  }
+
+  .equip-filters {
+    flex-direction: column;
   }
 
 }

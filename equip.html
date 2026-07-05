@@ -152,20 +152,65 @@
 
     </section>
 
-    <!-- ── MEMBRES ──────────────────────────────────── -->
-    <section class="equip-team">
-
+    <!-- ── DIRECCIÓ ─────────────────────────────────── -->
+    <section class="equip-team equip-directors">
       <span class="section-index">
-        04 / MEMBRES
+        04 / DIRECCIÓ
+      </span>
+
+      <h2 class="section-title">
+        Qui lidera el projecte
+      </h2>
+
+      <!-- generat per js/equip.js -->
+      <div class="equip-grid equip-grid--directors" id="equip-directors-grid"></div>
+    </section>
+
+    <!-- ── EQUIP I CONTACTE ─────────────────────────── -->
+    <section class="equip-team">
+      <span class="section-index">
+        05 / EQUIP I CONTACTE
       </span>
 
       <h2 class="section-title">
         El nostre equip
       </h2>
 
+      <div class="equip-filters">
+        <div class="equip-search-wrap">
+          <i class="ti ti-search"></i>
+          <input type="text" id="equip-search-input" placeholder="Cerca per nom o càrrec…" />
+        </div>
+
+        <select id="equip-filter-select">
+          <option value="tots">Tots els àmbits</option>
+          <option value="role-direccio">Direcció</option>
+          <option value="role-redaccio">Redacció / Comunicació</option>
+          <option value="role-visual">Fotografia / Audiovisual</option>
+          <option value="role-tecnic">Tècnic / Web</option>
+          <option value="role-colaboracio">Col·laboradors</option>
+        </select>
+      </div>
+
       <!-- generat per js/equip.js -->
       <div class="equip-grid" id="equip-grid"></div>
+      <p class="equip-empty" id="equip-empty" style="display:none;">
+        Cap membre coincideix amb la cerca.
+      </p>
+    </section>
 
+    <!-- ── DEPARTAMENTS ─────────────────────────────── -->
+    <section class="equip-departaments">
+      <span class="section-index">
+        06 / DEPARTAMENTS
+      </span>
+
+      <h2 class="section-title">
+        Com ens organitzem
+      </h2>
+
+      <!-- generat per js/equip.js -->
+      <div class="dept-list" id="equip-departaments"></div>
     </section>
 
   </main>
