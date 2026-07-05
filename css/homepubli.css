@@ -1,0 +1,518 @@
+/* =================================================
+   HOME — PUBLICACIONS FEED  vertical (3 posts)
+   Classes hpf-* úniques, no toca home.css
+================================================= */
+
+.hpf-section {
+  padding: 160px 6% 120px;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.hpf-section::before {
+  content: "FEED";
+  position: absolute;
+  top: 20px;
+  right: 4%;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(5rem, 16vw, 14rem);
+  line-height: 1;
+  letter-spacing: -6px;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── CAPÇALERA ──────────────────────────────────── */
+.hpf-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 64px;
+}
+
+.hpf-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hpf-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  line-height: 1;
+  color: var(--text);
+}
+
+.hpf-title .hpf-accent {
+  color: var(--blue);
+}
+
+.hpf-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+/* Profile pill */
+.hpf-profile-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 10px 20px 10px 12px;
+  background: rgba(255,255,255,0.02);
+}
+
+.hpf-avatar-ring {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: conic-gradient(var(--yellow), var(--blue), var(--pink), var(--orange), var(--yellow));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hpf-avatar-inner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hpf-avatar-inner img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hpf-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hpf-profile-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.hpf-profile-handle {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+/* ── FEED VERTICAL ──────────────────────────────── */
+.hpf-feed {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── POST CARD vertical ─────────────────────────── */
+.hpf-feed {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 1fr));
+  gap: 48px;
+  max-width: 1900px;
+  margin: 0 auto;
+}
+
+.hpf-vpost:first-child {
+  border-radius: 16px 16px 0 0;
+}
+
+.hpf-vpost:last-of-type {
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 0 16px 16px;
+}
+
+.hpf-vpost:only-child {
+  border-bottom: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.hpf-vpost:hover {
+  background: var(--bg);
+}
+
+/* Top bar — avatar + nom + data */
+.hpf-vpost-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.hpf-vpost-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hpf-vpost-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: conic-gradient(var(--yellow), var(--blue), var(--pink), var(--orange), var(--yellow));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hpf-vpost-avatar-inner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hpf-vpost-avatar-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hpf-vpost-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.hpf-vpost-username {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.hpf-vpost-time {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+/* Badge categoria top-right */
+.hpf-vpost-cat {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(90,166,255,0.3);
+  color: var(--blue);
+  background: rgba(90,166,255,0.08);
+}
+
+/* Imatge */
+.hpf-vpost-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+
+.hpf-vpost-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(25%) brightness(0.9);
+  transition: filter 0.5s ease, transform 0.7s cubic-bezier(.2,.8,.2,1);
+}
+
+.hpf-vpost:hover .hpf-vpost-img-wrap img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.03);
+}
+
+.hpf-vpost-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--line-strong);
+  font-size: 2.5rem;
+}
+
+/* Body — títol + resum */
+.hpf-vpost-body {
+  padding: 18px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hpf-vpost-title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+
+.hpf-vpost-resum {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Actions bar — likes, comentaris, compartir */
+.hpf-vpost-actions {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 10px 14px;
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
+  padding-top: 12px;
+}
+
+.hpf-vpost-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: color 0.25s ease, background 0.25s ease;
+}
+
+.hpf-vpost-action i {
+  font-size: 1.05rem;
+  transition: transform 0.25s ease;
+}
+
+.hpf-vpost-action:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.04);
+}
+
+.hpf-vpost-action.hpf-like:hover {
+  color: var(--pink);
+}
+
+.hpf-vpost-action.hpf-like:hover i {
+  transform: scale(1.25);
+}
+
+.hpf-vpost-action.hpf-share:hover {
+  color: var(--blue);
+}
+
+/* Spacer per empènyer el "llegir" a la dreta */
+.hpf-vpost-spacer {
+  flex: 1;
+}
+
+.hpf-vpost-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hpf-vpost-read i {
+  transition: transform 0.3s ease;
+}
+
+.hpf-vpost-read:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(90,166,255,0.08);
+}
+
+.hpf-vpost-read:hover i {
+  transform: translateX(3px);
+}
+
+/* ── LOADING / ERROR STATE ──────────────────────── */
+.hpf-state {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hpf-state.hpf-err { color: var(--pink); }
+
+.hpf-spinner {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--line-strong);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: hpf-spin 0.9s linear infinite;
+}
+
+@keyframes hpf-spin { to { transform: rotate(360deg); } }
+
+/* ── FOOTER "VEURE MÉS" ─────────────────────────── */
+.hpf-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 0;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hpf-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--line);
+}
+
+.hpf-load-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 24px 0 0;
+}
+
+.hpf-count-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hpf-count-label strong {
+  color: var(--blue);
+}
+
+/* Botó principal "Veure més" — estil igual que map-btn primary però blau */
+.hpf-load-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 999px;
+  border: 1px solid var(--blue);
+  background: rgba(90,166,255,0.08);
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.4s cubic-bezier(.2,.8,.2,1);
+  text-decoration: none;
+}
+
+.hpf-load-btn:hover {
+  background: var(--blue);
+  color: #04243d;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px -10px rgba(90,166,255,0.45);
+}
+
+.hpf-load-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.hpf-load-btn i {
+  transition: transform 0.35s ease;
+}
+
+.hpf-load-btn:hover i {
+  transform: translateY(2px);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .hpf-section { padding: 100px 6% 80px; }
+  .hpf-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+}
+
+@media (max-width: 600px) {
+  .hpf-section { padding: 70px 4% 60px; }
+  .hpf-title { letter-spacing: -2px; }
+  .hpf-feed { max-width: 100%; }
+  .hpf-vpost-img-wrap { aspect-ratio: 1 / 1; }
+}
