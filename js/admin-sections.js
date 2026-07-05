@@ -7,13 +7,194 @@
 // ════════════════════════════════════════════════════════════
 // DASHBOARD
 // ════════════════════════════════════════════════════════════
+
 function initDashboard(container, onNav) {
   container.innerHTML = `<div class="adm-loading"><div class="adm-spin"></div><span>Carregant estadístiques…</span></div>`;
-  Promise.allSettled([apiFetch("/admin/stats"), apiFetch("/admin/visits")]).then(([s, v]) => {
-    const stats = s.status === "fulfilled" ? s.value : null;
-    let visits = [];
-    if (v.status === "fulfilled") { const d = v.value; visits = Array.isArray(d) ? d : (d.visits ?? d.visites ?? []); }
-    renderDashboard(container, stats, visits, onNav);
+
+  Promise.allSettled([
+    apiFetch("/admin/events"),
+    apiFetch("/admin/projectes"),
+    apiFetch("/publi"),
+    apiFetch("/resenas"),
+    apiFetch("/solicituds"),
+    apiFetch("/admin/users"),
+  ]).then(([events, projectes, publi, resenas, solicituds, users]) => {
+
+    const val = (result, ...keys) =>
+      result.status === "fulfilled" ? extractArray(result.value, ...keys) : [];
+
+    const eventsArr     = val(events, "events");
+    const projectesArr  = val(projectes, "projectes");
+    const publiArr      = val(publi, "publicacions", "publi");
+    const resenasArr    = val(resenas, "resenas", "reseñas", "ressenyes");
+    const solicitudsArr = val(solicituds, "solicituds", "solicituts");
+    const usersArr      = val(users, "users", "usuaris");
+
+    // "Visites" real derivades del camp visualitzacions que ja
+    // guarda el backend a cada event/publicació (sense backend nou).
+    const sumViews = (arr) => arr.reduce((acc, item) => acc + (Number(item.visualitzacions) || 0), 0);
+    const totalVisualitzacions = sumViews(eventsArr) + sumViews(publiArr) + sumViews(projectesArr);
+
+    const stats = {
+      totalEvents:     eventsArr.length,
+      totalProjectes:  projectesArr.length,
+      totalPubli:      publiArr.length,
+      totalRessenyes:  resenasArr.length,
+      totalSolicituds: solicitudsArr.length,
+      totalUsers:      usersArr.length,
+      totalVisualitzacions,
+    };
+
+    const chartData = buildMonthlyViewsChart(eventsArr, publiArr, projectesArr);
+
+    renderDashboard(container, stats, chartData, onNav);
+  });
+}
+
+// Agrupa les visualitzacions reals per mes de publicació/inici,
+function buildMonthlyViewsChart(eventsArr, publiArr, projectesArr) {
+  const months = {}; // "2026-07" -> suma de visualitzacions
+
+  function addItems(arr, dateField) {
+    arr.forEach((item) => {
+      const views = Number(item.visualitzacions) || 0;
+      if (!views) return;
+      const raw = item[dateField] ?? item.data ?? item.createdAt;
+      if (!raw) return;
+      const d = new Date(raw);
+      if (isNaN(d)) return;
+      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+      months[key] = (months[key] || 0) + views;
+    });
+  }
+
+  addItems(publiArr, "data_publicacio");
+  addItems(eventsArr, "data_inici");
+  addItems(projectesArr, "data_inici");
+
+  return Object.entries(months)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .slice(-6) // últims 6 mesos amb dades reals
+    .map(([key, count]) => {
+      const [y, m] = key.split("-");
+      const label = new Date(`${y}-${m}-01`).toLocaleDateString("ca-ES", { month: "short", year: "2-digit" });
+      return { label, count };
+    });
+}
+
+function renderDashboard(container, stats, visits, onNav) {
+  const statCard = (icon, label, value, accent, navId) => `
+    <div class="adm-stat${navId ? " adm-stat--clickable" : ""}" style="--accent:${accent}" data-nav="${navId ?? ""}">
+      <div class="adm-stat__icon"><i class="ti ${icon}"></i></div>
+      <div class="adm-stat__body">
+        <span class="adm-stat__val">${value ?? "—"}</span>
+        <span class="adm-stat__lbl">${label}</span>
+      </div>
+      ${navId ? `<i class="ti ti-chevron-right adm-stat__arrow"></i>` : ""}
+    </div>
+  `;
+
+  const max = Math.max(...(visits.length ? visits.map(d => d.count) : [1]), 1);
+  const chartHtml = !visits.length
+    ? `<div class="adm-chart-empty"><i class="ti ti-chart-bar-off"></i><span>Encara no hi ha visualitzacions registrades als continguts</span></div>`
+    : `<div class="adm-chart">
+        ${visits.map(d => `
+          <div class="adm-chart__col">
+            <div class="adm-chart__bar-wrap">
+              <div class="adm-chart__bar" style="height:${(d.count / max) * 100}%" title="${d.count} visualitzacions">
+                <span class="adm-chart__val">${d.count}</span>
+              </div>
+            </div>
+            <span class="adm-chart__lbl">${d.label}</span>
+          </div>
+        `).join("")}
+      </div>`;
+
+  container.innerHTML = `
+    <div class="adm-sec">
+      <div class="adm-sec__head"><h2 class="adm-sec__title"><i class="ti ti-layout-dashboard"></i>Dashboard</h2></div>
+      <div class="adm-stats-grid">
+        ${statCard("ti-eye", "Visualitzacions totals", stats.totalVisualitzacions, "var(--blue)")}
+        ${statCard("ti-calendar-event", "Esdeveniments", stats.totalEvents, "var(--yellow)", "events")}
+        ${statCard("ti-folder", "Projectes", stats.totalProjectes, "var(--pink)", "projectes")}
+        ${statCard("ti-file-text", "Publicacions", stats.totalPubli, "var(--blue)", "publicacions")}
+        ${statCard("ti-message-star", "Ressenyes", stats.totalRessenyes, "var(--yellow)", "ressenyes")}
+        ${statCard("ti-users", "Sol·licituds", stats.totalSolicituds, "var(--pink)", "solicituds")}
+        ${statCard("ti-users-group", "Usuaris", stats.totalUsers, "var(--blue)", "usuaris")}
+      </div>
+      <div class="adm-card adm-card--chart">
+        <div class="adm-card__head">
+          <span class="adm-card__title"><i class="ti ti-chart-bar"></i>Visualitzacions per mes</span>
+          <span class="adm-card__sub">Suma del camp "visualitzacions" d'events i publicacions, agrupat per mes de publicació</span>
+        </div>
+        ${chartHtml}
+      </div>
+    </div>
+  `;
+
+  container.querySelectorAll("[data-nav]").forEach(el => {
+    if (el.dataset.nav) {
+      el.addEventListener("click", () => onNav(el.dataset.nav));
+      el.style.cursor = "pointer";
+    }
+  });
+}
+
+function renderDashboard(container, stats, visits, onNav) {
+  const statCard = (icon, label, value, accent, navId) => `
+    <div class="adm-stat${navId ? " adm-stat--clickable" : ""}" style="--accent:${accent}" data-nav="${navId ?? ""}">
+      <div class="adm-stat__icon"><i class="ti ${icon}"></i></div>
+      <div class="adm-stat__body">
+        <span class="adm-stat__val">${value ?? "—"}</span>
+        <span class="adm-stat__lbl">${label}</span>
+      </div>
+      ${navId ? `<i class="ti ti-chevron-right adm-stat__arrow"></i>` : ""}
+    </div>
+  `;
+
+  const max = Math.max(...(visits.length ? visits.map(d => d.count) : [1]), 1);
+  const chartHtml = !visits.length
+    ? `<div class="adm-chart-empty"><i class="ti ti-chart-bar-off"></i><span>Encara no hi ha visualitzacions registrades als continguts</span></div>`
+    : `<div class="adm-chart">
+        ${visits.map(d => `
+          <div class="adm-chart__col">
+            <div class="adm-chart__bar-wrap">
+              <div class="adm-chart__bar" style="height:${(d.count / max) * 100}%" title="${d.count} visualitzacions">
+                <span class="adm-chart__val">${d.count}</span>
+              </div>
+            </div>
+            <span class="adm-chart__lbl">${d.label}</span>
+          </div>
+        `).join("")}
+      </div>`;
+
+  container.innerHTML = `
+    <div class="adm-sec">
+      <div class="adm-sec__head"><h2 class="adm-sec__title"><i class="ti ti-layout-dashboard"></i>Dashboard</h2></div>
+      <div class="adm-stats-grid">
+        ${statCard("ti-eye", "Visualitzacions totals", stats.totalVisualitzacions, "var(--blue)")}
+        ${statCard("ti-calendar-event", "Esdeveniments", stats.totalEvents, "var(--yellow)", "events")}
+        ${statCard("ti-folder", "Projectes", stats.totalProjectes, "var(--pink)", "projectes")}
+        ${statCard("ti-file-text", "Publicacions", stats.totalPubli, "var(--blue)", "publicacions")}
+        ${statCard("ti-message-star", "Ressenyes", stats.totalRessenyes, "var(--yellow)", "ressenyes")}
+        ${statCard("ti-users", "Sol·licituds", stats.totalSolicituds, "var(--pink)", "solicituds")}
+        ${statCard("ti-users-group", "Usuaris", stats.totalUsers, "var(--blue)", "usuaris")}
+      </div>
+      <div class="adm-card adm-card--chart">
+        <div class="adm-card__head">
+          <span class="adm-card__title"><i class="ti ti-chart-bar"></i>Visualitzacions per mes</span>
+          <span class="adm-card__sub">Suma del camp "visualitzacions" d'events i publicacions, agrupat per mes de publicació</span>
+        </div>
+        ${chartHtml}
+      </div>
+    </div>
+  `;
+
+  container.querySelectorAll("[data-nav]").forEach(el => {
+    if (el.dataset.nav) {
+      el.addEventListener("click", () => onNav(el.dataset.nav));
+      el.style.cursor = "pointer";
+    }
   });
 }
 
@@ -104,7 +285,7 @@ function initEvents(container) {
     state.loading = true;
     renderTable();
     apiFetch("/admin/events")
-      .then(d => { state.rows = Array.isArray(d) ? d : (d.events ?? []); })
+      .then(d => { state.rows = extractArray(d, "events"); })
       .catch(() => adminToast("Error carregant esdeveniments", "err"))
       .finally(() => { state.loading = false; renderTable(); });
   }
@@ -265,7 +446,7 @@ function initProjectes(container) {
   function load() {
     state.loading = true; renderTable();
     apiFetch("/admin/projectes")
-      .then(d => { state.rows = Array.isArray(d) ? d : (d.projectes ?? []); })
+      .then(d => { state.rows = extractArray(d, "projectes"); })
       .catch(() => adminToast("Error carregant projectes", "err"))
       .finally(() => { state.loading = false; renderTable(); });
   }
@@ -427,7 +608,7 @@ function initPublicacions(container) {
   function load() {
     state.loading = true; renderTable();
     apiFetch("/publi")
-      .then(d => { state.rows = Array.isArray(d) ? d : (d.publicacions ?? []); })
+      .then(d => { state.rows = extractArray(d, "publicacions", "publi"); })
       .catch(() => adminToast("Error carregant publicacions", "err"))
       .finally(() => { state.loading = false; renderTable(); });
   }
@@ -615,7 +796,7 @@ function initRessenyes(container) {
   function load() {
     state.loading = true; renderTable();
     apiFetch("/resenas")
-      .then(data => { state.rows = Array.isArray(data) ? data : (data.resenas ?? data["reseñas"] ?? []); })
+      .then(data => { state.rows = extractArray(data, "resenas", "reseñas", "ressenyes"); })
       .catch(() => adminToast("Error carregant ressenyes", "err"))
       .finally(() => { state.loading = false; renderTable(); });
   }
@@ -751,7 +932,7 @@ function initSolicituds(container) {
   function load() {
     state.loading = true; renderTable();
     apiFetch("/solicituds")
-      .then(d => { state.rows = Array.isArray(d) ? d : (d.solicituts ?? d.solicituds ?? []); })
+      .then(d => { state.rows = extractArray(d, "solicituds", "solicituts"); })
       .catch(() => adminToast("Error carregant sol·licituds", "err"))
       .finally(() => { state.loading = false; renderTable(); });
   }
@@ -913,7 +1094,7 @@ function initUsuaris(container) {
   function load() {
     state.loading = true; renderTable();
     apiFetch("/admin/users")
-      .then(d => { state.rows = Array.isArray(d) ? d : (d.users ?? []); })
+      .then(d => { state.rows = extractArray(d, "users", "usuaris"); })
       .catch(() => adminToast("Error carregant usuaris", "err"))
       .finally(() => { state.loading = false; renderTable(); });
   }
@@ -1225,7 +1406,7 @@ function initMultimedia(container) {
   function load() {
     state.loading = true; renderGrid();
     apiFetch("/admin/multimedia")
-      .then(d => { state.images = Array.isArray(d) ? d : (d.images ?? []); })
+      .then(d => { state.images = extractArray(d, "images"); })
       .catch(() => adminToast("Error carregant imatges", "err"))
       .finally(() => { state.loading = false; renderGrid(); });
   }

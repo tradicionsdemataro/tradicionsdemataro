@@ -56,6 +56,20 @@ const adminToast = (() => {
   };
 })();
 
+
+function extractArray(data, ...preferredKeys) {
+  if (Array.isArray(data)) return data;
+  if (!data || typeof data !== "object") return [];
+
+  for (const key of preferredKeys) {
+    if (Array.isArray(data[key])) return data[key];
+  }
+  for (const key of Object.keys(data)) {
+    if (Array.isArray(data[key])) return data[key];
+  }
+  return [];
+}
+
 // ── Confirm ────────────────────────────────────────────────────────
 function showConfirm(msg, onYes) {
   const root = document.createElement("div");
